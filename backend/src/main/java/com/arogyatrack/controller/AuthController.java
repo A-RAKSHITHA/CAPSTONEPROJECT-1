@@ -17,6 +17,15 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @Autowired
+    private com.arogyatrack.service.OtpService otpService;
+
+    @PostMapping("/send-otp")
+    public ResponseEntity<com.arogyatrack.dto.OtpResponse> sendRegistrationOtp(@Valid @RequestBody com.arogyatrack.dto.SendOtpRequest request) {
+        com.arogyatrack.dto.OtpResponse response = otpService.generateAndSendOtp(request.getEmail(), request.getFullName());
+        return ResponseEntity.ok(response);
+    }
+
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         AuthResponse response = authService.authenticateUser(loginRequest);

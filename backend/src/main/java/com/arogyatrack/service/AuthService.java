@@ -40,6 +40,9 @@ public class AuthService {
     @Autowired
     private NotificationService notificationService;
 
+    @Autowired
+    private OtpService otpService;
+
     public AuthResponse authenticateUser(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword())
@@ -60,8 +63,21 @@ public class AuthService {
             throw new IllegalArgumentException("This email is already registered.");
         }
 
+        // Verify Email OTP
+        otpService.verifyOtp(signUpRequest.getEmail(), signUpRequest.getOtp());
+
         if (!signUpRequest.getPassword().equals(signUpRequest.getConfirmPassword())) {
             throw new IllegalArgumentException("Password and Confirm Password do not match.");
+        }
+
+        String phone = signUpRequest.getPhoneNumber();
+        if (phone == null || !phone.matches("^[0-9]{10}$")) {
+            throw new IllegalArgumentException("Phone number must be exactly 10 digits.");
+        }
+
+        String pwd = signUpRequest.getPassword();
+        if (pwd == null || !pwd.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~`]).{8,}$")) {
+            throw new IllegalArgumentException("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
         }
 
         // Create new user's account

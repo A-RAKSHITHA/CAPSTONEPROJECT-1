@@ -39,17 +39,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> fieldErrors = new HashMap<>();
-        ex.getBindingResult().getAllErrors().forEach((err) -> {
-            String fieldName = ((FieldError) err).getField();
+        String firstErrorMessage = null;
+        for (org.springframework.validation.ObjectError err : ex.getBindingResult().getAllErrors()) {
+            String fieldName = err instanceof FieldError ? ((FieldError) err).getField() : err.getObjectName();
             String errorMessage = err.getDefaultMessage();
             fieldErrors.put(fieldName, errorMessage);
-        });
+            if (firstErrorMessage == null) {
+                firstErrorMessage = errorMessage;
+            }
+        }
 
         Map<String, Object> error = new HashMap<>();
         error.put("timestamp", LocalDateTime.now());
         error.put("status", HttpStatus.BAD_REQUEST.value());
         error.put("error", "Validation Error");
-        error.put("message", "Health information is incomplete or invalid.");
+        error.put("message", firstErrorMessage != null ? firstErrorMessage : "Provided information is incomplete or invalid.");
         error.put("validationErrors", fieldErrors);
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
