@@ -21,12 +21,21 @@ class CKDPredictor:
         lr_path = os.path.join(self.models_dir, "logistic_regression.joblib")
         rf_path = os.path.join(self.models_dir, "random_forest.joblib")
 
-        if not (os.path.exists(prep_path) and os.path.exists(lr_path) and os.path.exists(rf_path)):
-            raise FileNotFoundError("Models or preprocessor not found. Please train models first using train.py.")
-
-        self.preprocessor = CKDPreprocessor.load(prep_path)
-        self.lr_model = joblib.load(lr_path)
-        self.rf_model = joblib.load(rf_path)
+        try:
+            if not (os.path.exists(prep_path) and os.path.exists(lr_path) and os.path.exists(rf_path)):
+                raise FileNotFoundError("Models or preprocessor not found.")
+            self.preprocessor = CKDPreprocessor.load(prep_path)
+            self.lr_model = joblib.load(lr_path)
+            self.rf_model = joblib.load(rf_path)
+        except Exception as e:
+            print(f"Artifact loading exception ({e}). Retraining models from dataset...")
+            from train import train_models
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            data_path = os.path.join(base_dir, "data", "kidney_disease.csv")
+            train_models(data_path, self.models_dir)
+            self.preprocessor = CKDPreprocessor.load(prep_path)
+            self.lr_model = joblib.load(lr_path)
+            self.rf_model = joblib.load(rf_path)
 
     def predict(self, input_data):
         """

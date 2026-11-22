@@ -74,7 +74,7 @@ jobs:
           retention-days: 7
 
   # -------------------------------------------------------------
-  # Job 3: Machine Learning Service (Python 3.10 + Scikit-Learn)
+  # Job 3: Machine Learning Service (Python 3.11 + Scikit-Learn)
   # -------------------------------------------------------------
   ml-service-verify:
     name: ML Service (Python + Scikit-Learn Models)
@@ -87,10 +87,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Python 3.10
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
           cache: 'pip'
           cache-dependency-path: ml-service/requirements.txt
 
@@ -99,5 +99,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run ML Service Tests & Verify Models
+      - name: Train and Validate Models
+        run: python src/train.py
+
+      - name: Run ML Service Unit Tests
         run: python test_service.py
