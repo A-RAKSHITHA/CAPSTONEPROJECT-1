@@ -43,10 +43,10 @@ jobs:
           retention-days: 7
 
   # -------------------------------------------------------------
-  # Job 2: Backend (Spring Boot 3 + Java 17) Build & Package
+  # Job 2: Backend (Spring Boot 3 + Java 21) Build & Package
   # -------------------------------------------------------------
   backend-build:
-    name: Backend (Spring Boot + Java 17)
+    name: Backend (Spring Boot + Java 21)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -56,11 +56,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Java 17 (Temurin)
+      - name: Setup Java 21 (Temurin)
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
           cache: 'maven'
 
       - name: Compile and Package Spring Boot Application
@@ -99,17 +99,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Verify Pre-trained CKD Models & Pipeline
-        run: |
-          python -c "
-          import joblib
-          import json
-          lr = joblib.load('models/logistic_regression.joblib')
-          rf = joblib.load('models/random_forest.joblib')
-          prep = joblib.load('models/preprocessor.joblib')
-          with open('models/model_metrics.json') as f:
-              metrics = json.load(f)
-          print('Successfully loaded Logistic Regression, Random Forest, and Preprocessor pipeline!')
-          print('Random Forest Accuracy:', metrics.get('random_forest', {}).get('accuracy'))
-          print('Logistic Regression Accuracy:', metrics.get('logistic_regression', {}).get('accuracy'))
-          "
+      - name: Run ML Service Tests & Verify Models
+        run: python test_service.py
