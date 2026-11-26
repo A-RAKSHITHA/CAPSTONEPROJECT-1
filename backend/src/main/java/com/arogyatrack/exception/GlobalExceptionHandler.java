@@ -68,6 +68,16 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
+    public ResponseEntity<Map<String, Object>> handleMessageNotReadable(org.springframework.http.converter.HttpMessageNotReadableException ex) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("timestamp", LocalDateTime.now());
+        error.put("status", HttpStatus.BAD_REQUEST.value());
+        error.put("error", "Bad Request");
+        error.put("message", "Invalid format in submitted vitals. Please ensure all numeric entries are valid numbers.");
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(Exception.class)
@@ -80,8 +90,8 @@ public class GlobalExceptionHandler {
         
         // Return human friendly message without revealing raw stack trace
         String msg = ex.getMessage();
-        if (msg != null && (msg.contains("Connection refused") || msg.contains("ConnectException") || msg.contains("5000"))) {
-            error.put("message", "Unable to connect to the assessment service. Please verify the ML service is running.");
+        if (msg != null && (msg.contains("Connection refused") || msg.contains("ConnectException") || msg.contains("5000") || msg.contains("502") || msg.contains("503") || msg.contains("504") || msg.contains("timeout") || msg.contains("Timeout") || msg.contains("assessment service"))) {
+            error.put("message", "The health assessment analysis service is warming up. Please try again in a few moments.");
         } else {
             error.put("message", "An unexpected error occurred while processing your request. Please try again.");
         }

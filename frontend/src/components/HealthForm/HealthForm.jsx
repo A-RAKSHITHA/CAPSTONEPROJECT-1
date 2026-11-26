@@ -45,13 +45,38 @@ const HealthForm = ({ initialValues = {}, onSubmit, isSubmitting = false }) => {
     setValidationError('');
 
     // Check key required fields
-    if (!formData.age || !formData.bp || !formData.bgr || !formData.bu || !formData.sc || !formData.hemo) {
+    if (
+      formData.age === '' || formData.age === null ||
+      formData.bp === '' || formData.bp === null ||
+      formData.bgr === '' || formData.bgr === null ||
+      formData.bu === '' || formData.bu === null ||
+      formData.sc === '' || formData.sc === null ||
+      formData.hemo === '' || formData.hemo === null
+    ) {
       setValidationError('Please complete all vital health indicators (Age, Blood Pressure, Blood Glucose, Blood Urea, Serum Creatinine, Hemoglobin).');
       setActiveTab('vitals');
       return;
     }
 
-    onSubmit(formData);
+    const cleaned = {
+      ...formData,
+      age: parseFloat(formData.age),
+      bp: parseFloat(formData.bp),
+      bgr: parseFloat(formData.bgr),
+      bu: parseFloat(formData.bu),
+      sc: parseFloat(formData.sc),
+      hemo: parseFloat(formData.hemo),
+      sg: formData.sg !== '' && formData.sg !== null ? parseFloat(formData.sg) : 1.020,
+      al: formData.al !== '' && formData.al !== null ? parseFloat(formData.al) : 0.0,
+      su: formData.su !== '' && formData.su !== null ? parseFloat(formData.su) : 0.0,
+      sod: formData.sod !== '' && formData.sod !== null ? parseFloat(formData.sod) : 137.0,
+      pot: formData.pot !== '' && formData.pot !== null ? parseFloat(formData.pot) : 4.4,
+      pcv: formData.pcv !== '' && formData.pcv !== null ? parseFloat(formData.pcv) : 40.0,
+      wc: formData.wc !== '' && formData.wc !== null ? parseFloat(formData.wc) : 8000.0,
+      rc: formData.rc !== '' && formData.rc !== null ? parseFloat(formData.rc) : 4.8,
+    };
+
+    onSubmit(cleaned);
   };
 
   return (

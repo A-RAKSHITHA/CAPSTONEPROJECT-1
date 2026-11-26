@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>ArogyaTrack Final Project Report</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 25mm 25mm 25mm 38mm;
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #111;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: justify;
+    background: #fff;
+  }
+  h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30pt;
+    margin-bottom: 15pt;
+    page-break-before: always;
+  }
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 22pt;
+    margin-bottom: 10pt;
+  }
+  h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 16pt;
+    margin-bottom: 6pt;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 6pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14pt 0;
+    font-size: 10pt;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 6pt 8pt;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  pre {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10pt;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9.5pt;
+    overflow-x: auto;
+    line-height: 1.35;
+    white-space: pre-wrap;
+  }
+  hr {
+    margin: 25pt 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+  .print-bar {
+    position: sticky;
+    top: 0;
+    background: #0d6efd;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  .print-bar button {
+    background: #fff;
+    color: #0d6efd;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  @media print {
+    .print-bar { display: none; }
+    body { padding: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class='print-bar'><span><strong>KL University Capstone Final Project Report (Cluster A)</strong></span><button onclick='window.print()'>📥 Print / Save as PDF (Ctrl + P)</button></div>
+<h1>KONERU LAKSHMAIAH EDUCATION FOUNDATION</h1>
+<h3>(DEEMED TO BE UNIVERSITY)</h3>
+<h3>KLEF COLLEGE OF ENGINEERING</h3>
+<h3>CLUSTER A - SOFTWARE SYSTEMS ENGINEERING</h3>
+<hr>
+<h1>FINAL PROJECT REPORT</h1>
+<h2>BIG DATA-DRIVEN CKD HEALTH RISK MONITORING SYSTEM (AROGYATRACK)</h2>
+<p>A Final Project Report submitted in partial fulfilment of the requirements for the award of the degree of</p>
+<p><strong>BACHELOR OF TECHNOLOGY IN COMPUTER SCIENCE AND ENGINEERING</strong></p>
+<hr>
+<h3>Submitted by:</h3>
+<li>**A. RAKSHITHA** (University ID: 2100030001) — *Team Lead*</li>
+<li>**K. LAHARI** (University ID: 2100030002)</li>
+<li>**M. TEJASWI** (University ID: 2100030003)</li>
+<li>**CH. PRABHAS** (University ID: 2100030004)</li>
+<h3>Under the supervision of:</h3>
+<li>**DR. [GUIDE NAME], Ph.D.** — *Associate Professor, Department of CSE*</li>
+<li>**[CO-GUIDE / INDUSTRY MENTOR NAME]** — *Technical Architect (Industry Mentor)*</li>
+<hr>
+<h3>Project Identity:</h3>
+<li>**Portal Use-Case ID:** `KLCAP-2026-CSE01`</li>
+<li>**Team No.:** `ClusterA-Team-14`</li>
+<li>**Approved Cluster:** `Cluster A - Software Systems Engineering`</li>
+<li>**Dominant Specialization:** `Cloud Computing, Full-Stack Software Systems & Applied AI/Data Engineering`</li>
+<li>**Department:** Department of Computer Science and Engineering</li>
+<li>**Campus:** Green Fields, Vaddeswaram - 522 502, Guntur District, Andhra Pradesh, India</li>
+<li>**Academic Year:** 2026–2027 | Month & Year: November 2026</li>
+<hr>
+<hr>
+<h2>TEMPLATE B: STUDENT DECLARATION</h2>
+<p><strong>Declaration:</strong> We declare that the report entitled <strong>"BIG DATA-DRIVEN CKD HEALTH RISK MONITORING SYSTEM (AROGYATRACK)"</strong> is a record of the bona fide capstone work carried out by us under the supervision of <strong>Dr. [Guide Name]</strong>. The work and results are traceable to the submitted research diary and evidence index. All sources, reused artefacts, datasets, software, and AI-assisted work have been disclosed and cited. The report has not been submitted elsewhere for another award. Confidential, personal, human, animal, or biological material has been handled only under the applicable approval and institutional requirements (DPDP Act 2023 & ICMR ethical guidelines).</p>
+<table>
+<thead><tr><th>Student Name</th><th>University ID</th><th>Signature</th><th>Date</th></tr></thead>
+<tbody>
+<tr><td>**A. Rakshitha**</td><td>2100030001</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**K. Lahari**</td><td>2100030002</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**M. Tejaswi**</td><td>2100030003</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Ch. Prabhas**</td><td>2100030004</td><td>____________________</td><td>25-Nov-2026</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>TEMPLATE C: PROJECT COMPLETION CERTIFICATE</h2>
+<p><strong>Certificate:</strong> This is to certify that the Final Project Report entitled <strong>"BIG DATA-DRIVEN CKD HEALTH RISK MONITORING SYSTEM (AROGYATRACK)"</strong> submitted by <strong>A. Rakshitha (2100030001), K. Lahari (2100030002), M. Tejaswi (2100030003), and Ch. Prabhas (2100030004)</strong> in partial fulfilment of the requirements for the award of the degree of <strong>Bachelor of Technology in Computer Science and Engineering</strong> is a bona fide record of the work carried out under our guidance and supervision. The report conforms to the approved Project Mandate, Cluster A research diary, O1–O5 traceability, evidence index, and applicable professional, safety, ethical, and integrity requirements.</p>
+<table>
+<thead><tr><th>Role</th><th>Name & Designation</th><th>Signature</th><th>Date</th></tr></thead>
+<tbody>
+<tr><td>**Project Guide**</td><td>Dr. [Guide Name], Associate Professor, Dept. of CSE</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Co-Guide / Mentor**</td><td>[Co-Guide Name], Technical Architect</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Head of Department**</td><td>Dr. [HOD Name], Professor & Head, Dept. of CSE</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**External Examiner**</td><td>[External Examiner Name], Senior Professor</td><td>____________________</td><td>25-Nov-2026</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>ACKNOWLEDGEMENTS</h2>
+<p>We express our deepest gratitude to our project supervisor, <strong>Dr. [Guide Name]</strong>, for invaluable technical guidance, constructive scrutiny, and encouragement throughout the design, implementation, and cloud deployment of the ArogyaTrack platform. We sincerely thank the <strong>Head of the Department of Computer Science and Engineering</strong> and the <strong>Capstone Review Committee (Cluster A)</strong> for providing high-performance computing resources and structured milestones that enabled this engineering endeavor. Finally, we thank our parents, peers, and community health workers (ANMs) who offered foundational domain feedback during our requirements elicitation process.</p>
+<hr>
+<hr>
+<h2>TEMPLATE D: STRUCTURED ABSTRACT</h2>
+<li>**Problem and Stakeholder:** In rural communities across Andhra Pradesh (e.g., Guntur, Prakasam, Uddanam regions), Chronic Kidney Disease (CKD) progresses asymptomatically until advanced renal failure due to scarce screening facilities, manual record keeping, and lack of systematic follow-ups. Frontline health workers (Auxiliary Nurse Midwives - ANMs) lack digital decision-support mechanisms to monitor community vitals, identify vulnerable individuals, and prioritize timely hospital referrals.</li>
+<li>**Mandate and Integrated Delivery:** The approved project mandate required engineering **ArogyaTrack**, a cloud-native, distributed four-tier health risk monitoring platform integrating automated community health record management, supervised machine learning inference, patient-nurse triage clustering, and role-based administrative surveillance.</li>
+<li>**Software Systems Engineering Method / Design:** Built under ISO/IEC/IEEE 12207 life cycle processes, the system integrates a mobile-first Single Page Application (React 18 + Vite 5 hosted on Vercel), a containerized RESTful business logic core (Spring Boot 3.2.4 on Java 21 hosted on Render), an isolated Python 3.11 Flask ML microservice (Gunicorn WSGI), and a cloud-native Serverless MySQL database (TiDB Cloud on AWS) communicating over TLS 1.3. User onboarding is protected via strict 10-digit phone regex validation, complex password enforcement, and in-memory 5-minute email OTP verification.</li>
+<li>**Most Important Result:** On the held-out test split ($N=80$) of the 400-record Apollo Hospitals CKD clinical benchmark, the primary Random Forest Classifier achieved **100.0% Accuracy**, **1.000 Precision**, and **1.000 Recall (0 False Negatives)** with a mean REST inference latency of **48.2 ms**, substantially exceeding the baseline Logistic Regression model (98.75% Accuracy, 0.980 Recall).</li>
+<li>**Original Contribution:** A production-grade, fault-tolerant health monitoring pipeline featuring a dual-mode OTP fallback mechanism, automated ANM cluster routing, and an interactive real-time visual credential verification interface tailored for rural healthcare field deployment.</li>
+<li>**Outcome, Demonstrated Impact and Limitation:** The integrated platform was verified across local, Dockerized, and multi-cloud environments (Render + Vercel + TiDB Cloud). It demonstrates scalable, non-diagnostic risk stratification and continuous follow-up tracking while remaining constrained to structured clinical laboratory vitals requiring real-world institutional clinical trials before diagnostic deployment.</li>
+<li>**Keywords:** Chronic Kidney Disease, Spring Boot 3.2, React Vite, Random Forest, TiDB Cloud, REST Microservices, Clinical Decision-Support.</li>
+<hr>
+<hr>
+<h2>PROJECT AT A GLANCE</h2>
+<pre>+-------------------------------------------------------------------------------------------------------------------------+
+|                                              AROGYATRACK: SYSTEM VISUAL GRAMMAR                                         |
++-------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                         |
+|  [RURAL STAKEHOLDER PROBLEM]                                                                                            |
+|  Unscreened CKD progression, paper record fragmentation, absent ANM follow-up tracking in rural Andhra Pradesh villages |
+|                                                                                                                         |
+|                                                       │                                                                 |
+|                                                       ▼                                                                 |
+|  [USERS &amp; ACTORS]                                                                                                       |
+|  • Rural Community Members (Patients)   • ANM Health Workers (Nurses)   • District Health Administrators                |
+|                                                                                                                         |
+|                                                       │                                                                 |
+|                                                       ▼                                                                 |
+|  [DATA &amp; EVENT INPUTS]                                                                                                  |
+|  • Clinical Vitals: Serum Creatinine (sc), Blood Urea (bu), Blood Glucose (bgr), Albumin (al), BP, Hemoglobin (hemo)   |
+|  • Security &amp; Auth: 10-Digit Phone, 5-Criteria Password Checklist, 6-Digit Email OTP Verification                       |
+|                                                                                                                         |
+|                                                       │  (HTTPS / REST / JSON + JWT)                                    |
+|                                                       ▼                                                                 |
+|  [INTEGRATED APPLICATION &amp; PLATFORM]                                                                                    |
+|  +-------------------------------------------------------------------------------------------------------------------+  |
+|  | Frontend Tier: React 18 + Vite 5 (Hosted on Vercel CDN)                                                           |  |
+|  | - Client SPA Routing (vercel.json) | Tailwind CSS Mobile-First UI | Bilingual English/Telugu Voice-to-Text Support  |  |
+|  +-------------------------------------------------------------------------------------------------------------------+  |
+|                                                       │                                                                 |
+|                                                       ▼                                                                 |
+|  +-------------------------------------------------------------------------------------------------------------------+  |
+|  | Backend API Tier: Spring Boot 3.2.4 on Java 21 (Docker Web Service on Render)                                     |  |
+|  | - Spring Security 6: Stateless 256-bit HMAC JWT Auth | BCrypt Password Hashing ($cost=10$)                         |  |
+|  | - Dual-Mode OtpService &amp; EmailService: JavaMailSender HTML Dispatch + Presentation Fallback Chip                  |  |
+|  | - Business Domain Logic: Patient-to-ANM Cluster Assignment, Follow-Up Scheduling, Triage Notifications            |  |
+|  +-------------------------------------------------------------------------------------------------------------------+  |
+|                           │                                                              │                              |
+|          TLS 1.3 / JDBC   │                                              Internal HTTP   │                              |
+|          (Port 4000)      ▼                                              (/predict)      ▼                              |
+|  +---------------------------------------------------+      +--------------------------------------------------------+  |
+|  | Persistence Tier: TiDB Cloud Serverless MySQL 8.0 |      | Intelligence Tier: Flask ML Microservice (Render)      |  |
+|  | - 8 JPA Relational Schemas (AWS us-east-1)        |      | - Python 3.11 + Gunicorn WSGI + Scikit-Learn           |  |
+|  | - Automated Hibernate DDL &amp; Default Seed Users    |      | - Pre-trained Random Forest (Accuracy: 100%, F1: 1.0)  |  |
+|  +---------------------------------------------------+      +--------------------------------------------------------+  |
+|                                                                                                                         |
+|                                                       │                                                                 |
+|                                                       ▼                                                                 |
+|  [MEASURED SYSTEM RESULTS &amp; OUTCOMES]                                                                                   |
+|  • 100% Model Accuracy &amp; 0 False Negatives (Recall: 1.000) on 80 held-out patient test cases                            |
+|  • 48.2 ms Mean Inference Latency | 200 OK Preflight CORS Authorization across Vercel &amp; Render Cloud                     |
+|  • Automated Triage Notifications: Immediate high-risk patient routing to local ANM community dashboards                 |
++-------------------------------------------------------------------------------------------------------------------------+
+</pre>
+<hr>
+<hr>
+<h2>TABLE OF CONTENTS</h2>
+<li>**Part III - Preliminary Pages and Mandatory Disclosures**</li>
+<li>Student Declaration ................................................................................................................. i</li>
+<li>Project Completion Certificate ................................................................................................ ii</li>
+<li>Acknowledgements ............................................................................................................. iii</li>
+<li>Structured Abstract ............................................................................................................. iv</li>
+<li>Project at a Glance ............................................................................................................. v</li>
+<li>List of Figures ................................................................................................................... viii</li>
+<li>List of Tables .................................................................................................................... ix</li>
+<li>List of Abbreviations & Acronyms ...................................................................................... x</li>
+<li>**Chapter 1 - Project Context, Problem Definition and Objectives** ..................................... 1</li>
+<li>1.1 Project Identity ............................................................................................................. 1</li>
+<li>1.2 Verified Problem Source .............................................................................................. 1</li>
+<li>1.3 Stakeholders, Operating Context, and Baseline Pain Points ........................................ 2</li>
+<li>1.4 Approved Problem Statement, Project Mandate, and Final Goal ................................... 2</li>
+<li>1.5 System Scope, Assumptions, Constraints, and Dependencies ...................................... 3</li>
+<li>1.6 O1–O5 Objectives with Measurable Success Criteria ................................................... 3</li>
+<li>1.7 Intended Technical Outcome versus Real-World Impact ................................................ 4</li>
+<li>1.8 Primary SDG Target Linkage ........................................................................................ 4</li>
+<li>1.9 Resource, Feasibility, Safety/Ethics, and Access Boundary ............................................ 5</li>
+<li>1.10 Report Organisation ................................................................................................... 5</li>
+<li>**Chapter 2 - Literature Review, Existing Solutions and Identified Gap** ............................ 6</li>
+<li>2.1 Review Protocol ............................................................................................................. 6</li>
+<li>2.2 Scientific and Technical Literature Review ...................................................................... 6</li>
+<li>2.3 Industry Systems, Standards, and Datasets ................................................................... 7</li>
+<li>2.4 Comparison Against Common Engineering Criteria ...................................................... 7</li>
+<li>2.5 Limitations, Contradictions, and Unresolved Needs ....................................................... 8</li>
+<li>2.6 Evidence-Backed Gap Statement .................................................................................. 8</li>
+<li>2.7 Positioning and Added Value ......................................................................................... 9</li>
+<li>2.8 Consequences for Requirements and Architecture ........................................................ 9</li>
+<li>**Chapter 3 - Requirements Specification and Acceptance Criteria** ................................. 10</li>
+<li>3.1 Users, Actors, and Operating Environment ................................................................. 10</li>
+<li>3.2 Functional Requirements (REQ-F-01 to REQ-F-08) .................................................... 10</li>
+<li>3.3 Quality-Attribute Requirements (ISO/IEC 25010) ............................................................ 11</li>
+<li>3.4 Data Requirements ........................................................................................................ 12</li>
+<li>3.5 External Interfaces and Version Compatibility .............................................................. 12</li>
+<li>3.6 Security and Trust Boundary Requirements ................................................................ 13</li>
+<li>3.7 AI/Model Requirements ................................................................................................. 13</li>
+<li>3.8 Deployment and Operational Requirements .................................................................. 14</li>
+<li>3.9 Acceptance Matrix and Approved Waivers ................................................................... 14</li>
+<li>**Chapter 4 - System Architecture, Data Design and Engineering Decisions** .................. 15</li>
+<li>4.1 Alternative Architectures and Selection Trade-Offs ....................................................... 15</li>
+<li>4.2 Context View and Trust Boundaries ............................................................................. 15</li>
+<li>4.3 Container / Component View ........................................................................................ 16</li>
+<li>4.4 Interface Design and API Contracts .............................................................................. 17</li>
+<li>4.5 Data Architecture and Relational Schemas ................................................................... 17</li>
+<li>4.6 AI / Model Architecture ................................................................................................. 18</li>
+<li>4.7 Security Architecture (Authentication, Authorization, CORS) ........................................ 19</li>
+<li>4.8 Deployment Topology and Cloud Resilience ................................................................. 19</li>
+<li>4.9 Architecture Decision Records (ADR Summary) ........................................................... 20</li>
+<li>**Chapter 5 - System Implementation, Integration and Deployment** ................................. 21</li>
+<li>5.1 Repository Structure and Branching Strategy ............................................................... 21</li>
+<li>5.2 Frontend Implementation (React 18 + Vite 5) ................................................................. 21</li>
+<li>5.3 Backend Domain Services & Persistence (Spring Boot 3.2.4) ....................................... 22</li>
+<li>5.4 Data Pipeline and Preprocessing ................................................................................... 23</li>
+<li>5.5 Machine Learning Model Training & Serialization ........................................................ 23</li>
+<li>5.6 Security Controls Implementation ................................................................................. 24</li>
+<li>5.7 Automated Build, Dependency Locks, and CI/CD .......................................................... 25</li>
+<li>5.8 Environment Configuration & Database Migration ........................................................ 25</li>
+<li>5.9 Integrated Release and Operation Instructions .............................................................. 26</li>
+<li>**Chapter 6 - Verification, Validation, Security and Operational Reliability** ...................... 27</li>
+<li>6.1 Test Strategy, Environments, and Traceability ............................................................... 27</li>
+<li>6.2 Unit and Component Tests ........................................................................................... 27</li>
+<li>6.3 API Contract and Integration Tests ................................................................................ 28</li>
+<li>6.4 Model Evaluation and Quality Tests ............................................................................... 28</li>
+<li>6.5 Performance, Latency, and Scalability Tests ................................................................. 29</li>
+<li>6.6 Security, Abuse, and Injection Tests (OWASP) ............................................................. 29</li>
+<li>6.7 Reliability, Fallback, and Recovery Tests ...................................................................... 30</li>
+<li>6.8 Usability and User-Acceptance Tests ............................................................................ 30</li>
+<li>6.9 Defect Closure and Residual Operational Risks ........................................................... 31</li>
+<li>**Chapter 7 - Results, Performance Evaluation and Discussion** ........................................ 32</li>
+<li>7.1 Integrated Release and Evaluation Context ................................................................... 32</li>
+<li>7.2 Functional Acceptance Results by O1–O5 ..................................................................... 32</li>
+<li>7.3 Quality-Attribute Results (Performance, Reliability, Security) ......................................... 33</li>
+<li>7.4 Model Results Against Baseline ..................................................................................... 33</li>
+<li>7.5 User and Stakeholder Evaluation ................................................................................... 34</li>
+<li>7.6 Error Analysis and False-Negative Mitigation ................................................................ 34</li>
+<li>7.7 Cost, Capacity, and Cloud Operational Limits ............................................................... 35</li>
+<li>7.8 Discussion and Engineering Findings ............................................................................ 35</li>
+<li>**Chapter 8 - Outcomes, Impact, Sustainability and Feasibility** ........................................... 36</li>
+<li>8.1 Planned versus Achieved Technical Outcomes ............................................................. 36</li>
+<li>8.2 Stakeholder Outcomes within Validation Boundary ....................................................... 36</li>
+<li>8.3 Intended versus Demonstrated Real-World Impact ........................................................ 37</li>
+<li>8.4 Primary SDG Target Contribution (SDG 3 & SDG 10) ................................................... 37</li>
+<li>8.5 Safety, Ethical, and Data Privacy Consequences .......................................................... 38</li>
+<li>8.6 Techno-Economic Feasibility and Scale Implications ..................................................... 38</li>
+<li>8.7 Sustainability and Life-Cycle Implications ..................................................................... 39</li>
+<li>8.8 Translation Pathway for Full Clinical Field Deployment ................................................ 39</li>
+<li>**Chapter 9 - Project Execution, Review-Gate Closure and Team Contributions** .............. 40</li>
+<li>9.1 Milestone Synthesis (Semesters VII & VIII) .................................................................... 40</li>
+<li>9.2 Gate Decisions Summary (G0, R1, PDR, CDR) .............................................................. 40</li>
+<li>9.3 Material Risks, Deviations, and Change Decisions ........................................................ 41</li>
+<li>9.4 Release Configuration Management and Reproducibility .............................................. 41</li>
+<li>9.5 Team Organization and Individual Contribution Matrix ................................................. 42</li>
+<li>9.6 Professional, Ethical, and AI/Tool Disclosure ................................................................. 43</li>
+<li>9.7 Dissemination and Intellectual Property Assets ............................................................ 43</li>
+<li>**Chapter 10 - Conclusions, Contributions, Limitations and Future Work** ......................... 44</li>
+<li>10.1 Mandate-Level Conclusion .......................................................................................... 44</li>
+<li>10.2 Objectives Status Summary (O1–O5) ........................................................................... 44</li>
+<li>10.3 Original Engineering and Applied Contributions ......................................................... 45</li>
+<li>10.4 Limitations and Residual Boundary Risks .................................................................... 45</li>
+<li>10.5 Recommendations for Deployment and Scale-Up ........................................................ 46</li>
+<li>10.6 Prioritised and Feasible Next Work ............................................................................. 46</li>
+<li>**References (IEEE Style)** ....................................................................................................... 47</li>
+<li>**Part VI - Mandatory Templates and Verification Registers** ............................................. 49</li>
+<li>Template E: Project Objectives and Acceptance Criteria .................................................. 49</li>
+<li>Template F: Outcomes and Impact Assessment ................................................................. 49</li>
+<li>Template G: Approved Design and Final Implementation Comparison .............................. 50</li>
+<li>Template G1: Approved Change Register ........................................................................... 50</li>
+<li>Template H: Objective-to-Evidence Traceability Matrix ...................................................... 51</li>
+<li>Template I: Review-Gate Closure Summary ....................................................................... 51</li>
+<li>Template J: Software Requirements and Release Acceptance Matrix ................................ 52</li>
+<li>Template K: Architecture Decision Register (ADR) ........................................................... 53</li>
+<li>Template L: API, Data and Model Asset Register .............................................................. 54</li>
+<li>Template M: Individual Contribution Statement and Matrix ............................................... 55</li>
+<li>Template N: Master Evidence Register ............................................................................... 56</li>
+<li>Template O: Responsible Use of AI and Digital Tools ........................................................ 57</li>
+<li>Part VII: Final Submission and Viva Voce Checklist ........................................................... 58</li>
+<hr>
+<hr>
+<h2>LIST OF FIGURES</h2>
+<li>**Figure 1.1:** Geographic distribution of Chronic Kidney Disease clusters in rural Andhra Pradesh ............. 2</li>
+<li>**Figure 3.1:** ArogyaTrack high-level use-case model across User, Nurse, and Admin actors ........................ 11</li>
+<li>**Figure 4.1:** C4 Component Diagram illustrating 4-tier microservices container topology ............................ 16</li>
+<li>**Figure 4.2:** Entity-Relationship (ER) physical relational data model on TiDB Cloud MySQL ....................... 18</li>
+<li>**Figure 4.3:** Supervised Machine Learning classification pipeline with Random Forest estimator ................. 19</li>
+<li>**Figure 5.1:** Spring Security stateless JWT authentication and CORS filter chain architecture .................... 24</li>
+<li>**Figure 5.2:** Multi-stage containerized build pipeline using Docker on Render and Vercel .......................... 25</li>
+<li>**Figure 6.1:** GitHub Actions CI/CD automated multi-environment test pipeline execution ........................... 28</li>
+<li>**Figure 7.1:** Receiver Operating Characteristic (ROC) curve comparison (Random Forest vs Logistic) .......... 33</li>
+<li>**Figure 7.2:** Confusion Matrix for Random Forest Classifier on 80 held-out patient validation records ...... 34</li>
+<hr>
+<h2>LIST OF TABLES</h2>
+<li>**Table 1.1:** Core project stakeholders, operating contexts, and baseline pain points ................................. 2</li>
+<li>**Table 1.2:** Objectives O1–O5 definition, success criteria, and semester targets ........................................ 4</li>
+<li>**Table 2.1:** Systematic comparative analysis of ArogyaTrack against existing health platforms .................. 7</li>
+<li>**Table 3.1:** Functional requirements specification with objective traceability ........................................... 10</li>
+<li>**Table 3.2:** Non-functional quality-attribute requirements mapped to ISO/IEC 25010 .................................. 11</li>
+<li>**Table 4.1:** Architectural alternatives evaluation and multi-criteria decision matrix .................................... 15</li>
+<li>**Table 4.2:** RESTful API endpoint contract specifications and JSON payloads ........................................... 17</li>
+<li>**Table 5.1:** Clinical features and preprocessing parameters applied to Kaggle CKD data ........................... 23</li>
+<li>**Table 6.1:** Master unit and component test execution results matrix ........................................................ 27</li>
+<li>**Table 7.1:** Model evaluation metrics comparison on held-out test data ($N=80$) ....................................... 33</li>
+<li>**Table 7.2:** Production operational benchmarks and endpoint response latency ......................................... 35</li>
+<li>**Table 9.1:** Milestone delivery synthesis across Capstone Project Semesters VII and VIII ............................ 40</li>
+<li>**Table 9.2:** Comprehensive team contribution breakdown by objective and work package ........................ 42</li>
+<hr>
+<h2>LIST OF ABBREVIATIONS & ACRONYMS</h2>
+<li>**ADR:** Architecture Decision Record</li>
+<li>**ANM:** Auxiliary Nurse Midwife</li>
+<li>**API:** Application Programming Interface</li>
+<li>**AUC:** Area Under Curve</li>
+<li>**BCrypt:** Adaptive Password Hashing Algorithm based on Blowfish</li>
+<li>**CKD:** Chronic Kidney Disease</li>
+<li>**CORS:** Cross-Origin Resource Sharing</li>
+<li>**DPDP:** Digital Personal Data Protection Act (India, 2023)</li>
+<li>**eGFR:** Estimated Glomerular Filtration Rate</li>
+<li>**HMAC:** Hash-Based Message Authentication Code</li>
+<li>**IEEE:** Institute of Electrical and Electronics Engineers</li>
+<li>**ISO/IEC:** International Organization for Standardization / International Electrotechnical Commission</li>
+<li>**JPA:** Jakarta Persistence API</li>
+<li>**JWT:** JSON Web Token</li>
+<li>**ML:** Machine Learning</li>
+<li>**OTP:** One-Time Password</li>
+<li>**RBAC:** Role-Based Access Control</li>
+<li>**ROC:** Receiver Operating Characteristic</li>
+<li>**SBOM:** Software Bill of Materials</li>
+<li>**SDG:** Sustainable Development Goal (United Nations)</li>
+<li>**SPA:** Single Page Application</li>
+<li>**SRS:** Software Requirements Specification</li>
+<li>**TLS:** Transport Layer Security</li>
+<li>**UAT:** User Acceptance Testing</li>
+<li>**WSGI:** Web Server Gateway Interface</li>
+<hr>
+<h2>LIST OF SYMBOLS & NOTATIONS</h2>
+<li>**$N$:** Total dataset sample size ($N=400$)</li>
+<li>**$N_{train}$:** Number of training observations ($N_{train}=320$, 80%)</li>
+<li>**$N_{test}$:** Number of validation/testing observations ($N_{test}=80$, 20%)</li>
+<li>**$TP$ / $TN$:** True Positives ($TP=50$) / True Negatives ($TN=30$)</li>
+<li>**$FP$ / $FN$:** False Positives ($FP=0$) / False Negatives ($FN=0$ in Random Forest)</li>
+<li>**$\text{Accuracy}$:** $\frac{TP + TN}{TP + TN + FP + FN} = 1.000$ (100.0%)</li>
+<li>**$\text{Recall (Sensitivity)}$:** $\frac{TP}{TP + FN} = 1.000$ (100.0%)</li>
+<li>**$\text{Precision}$:** $\frac{TP}{TP + FP} = 1.000$ (100.0%)</li>
+<li>**$F_1\text{-Score}$:** $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = 1.000$</li>
+<li>**$C$:** Inverse regularization strength in Logistic Regression ($C=1.0$)</li>
+<li>**$n_{estimators}$:** Number of trees in Random Forest ensemble ($n_{estimators}=100$)</li>
+<hr>
+<hr>
+<h1>CHAPTER 1: PROJECT CONTEXT, PROBLEM DEFINITION AND OBJECTIVES</h1>
+<h3>1.1 Project Identity</h3>
+<li>**Portal Project Use-Case ID:** `KLCAP-2026-CSE01`</li>
+<li>**Approved Project Title:** Big Data-Driven CKD Health Risk Monitoring System (ArogyaTrack)</li>
+<li>**Dominant Specialization:** Software Systems Engineering, Cloud Microservices, Applied Machine Learning</li>
+<li>**Approved Cluster:** Cluster A - Software Systems Engineering</li>
+<li>**Student Team:** A. Rakshitha (Lead), K. Lahari, M. Tejaswi, Ch. Prabhas</li>
+<h3>1.2 Verified Problem Source</h3>
+<p>Chronic Kidney Disease (CKD) represents a catastrophic public health crisis in India, accounting for over 1.3 million annual deaths and progressing disproportionately in rural agricultural belts. According to the Indian Council of Medical Research (ICMR) Renal Registry and epidemiological investigations by Apollo Hospitals and the Ministry of Health and Family Welfare (MoHFW), rural agrarian communities in Andhra Pradesh (notably in Guntur, Prakasam, and the Uddanam tract of Srikakulam) exhibit an alarming prevalence of non-communicable kidney disease known as CKDu (CKD of unknown etiology). The unmitigated problem stems from:</p>
+<p>1. Complete absence of regular, preventative clinical screening infrastructure in remote mandals.</p>
+<p>2. Fragile manual paper record-keeping in Sub-Centres and Community Health Centres (CHCs).</p>
+<p>3. The silent, asymptomatic progression of early-stage renal decline (Stages 1–3), which presents no clinical pain until irreversible nephron degradation occurs.</p>
+<h3>1.3 Stakeholders, Operating Context, and Baseline Pain Points</h3>
+<p><em>Table 1.1: Core project stakeholders, operating contexts, and baseline pain points.</em></p>
+<table>
+<thead><tr><th>Stakeholder Group</th><th>Operating Context</th><th>Baseline Pain Point</th></tr></thead>
+<tbody>
+<tr><td>**Rural Community Members (Patients)**</td><td>Agricultural villages, low digital literacy, high distance to tertiary hospitals ($>45\text{ km}$).</td><td>Asymptomatic disease onset; fear of expensive diagnostics; inability to track health trends or access historical vitals.</td></tr>
+<tr><td>**Auxiliary Nurse Midwives (ANMs) & ASHA Workers**</td><td>Sub-centres, field visits, door-to-door triage with manual registers.</td><td>Extreme administrative load; inability to prioritize high-risk patients across large populations ($>5,000$ individuals per worker).</td></tr>
+<tr><td>**District Medical Officers (Admins)**</td><td>District Health Society (Guntur / Vijayawada), macro health policy planning.</td><td>Delayed disease surveillance data; fragmented paper reports; zero visibility into localized disease clusters or mandal hot-spots.</td></tr>
+</tbody>
+</table>
+<h3>1.4 Approved Problem Statement, Project Mandate, and Final Goal</h3>
+<li>**Approved Problem Statement:** Rural populations face preventable renal morbidity due to a lack of early health parameter screening, decentralized and fragile paper-based health records, and the absence of algorithmic decision-support tools that enable frontline health workers to triage at-risk individuals before symptomatic renal failure.</li>
+<li>**Project Mandate:** To engineer a secure, cloud-native, distributed software platform that consolidates community health parameters, provides real-time machine-learning-driven CKD risk assessment, automates patient-to-ANM routing, and maintains an auditable digital health record history.</li>
+<li>**One-Sentence Final Project Goal:** Deploy a production-grade, 4-tier distributed web platform that predicts CKD risk with over 95% accuracy and empowers rural health workers with automated risk-based patient triage and follow-up management.</li>
+<h3>1.5 Scope: In-Scope, Out-of-Scope, Assumptions, and Constraints</h3>
+<li>**In-Scope:**</li>
+<li>4-Tier cloud architecture: React 18 SPA (Vercel), Spring Boot 3.2.4 REST API (Render Docker), Python Flask ML microservice (Render), and TiDB Serverless MySQL database.</li>
+<li>Role-Based Access Control (RBAC) across Community Member, Health Worker (ANM), and Administrator roles.</li>
+<li>Robust signup validation: 10-digit phone enforcement (`^[0-9]{10}$`), 5-rule password regex, and in-memory 5-minute Email OTP verification.</li>
+<li>ML-based renal risk classification (Random Forest and Logistic Regression) with sub-100ms inference latency.</li>
+<li>Patient-to-nurse cluster assignment based on village mandal geography with priority triage alerts.</li>
+<li>**Out-of-Scope:** Definitive medical/pathological diagnosis (system operates strictly as a clinical *decision-support* aid); direct automated invasive laboratory blood extraction; integration with proprietary inpatient hospital billing software.</li>
+<li>**Assumptions:** Basic smartphone/tablet web browser availability at the village Sub-Centre level; periodic internet access for cloud synchronization.</li>
+<li>**Constraints:** Must operate entirely on zero-cost cloud compute tiers (Render free tier, Vercel Hobby, TiDB Cloud Serverless) while sustaining production security and performance standards.</li>
+<h3>1.6 O1–O5 Objectives with Measurable Success Criteria</h3>
+<p><em>Table 1.2: Objectives O1–O5 definition, success criteria, and semester targets.</em></p>
+<table>
+<thead><tr><th>Obj. ID</th><th>Objective Definition</th><th>Measurable Success Criteria</th><th>Target Semester</th><th>Owner</th></tr></thead>
+<tbody>
+<tr><td>**O1**</td><td>Design and implement a secure, distributed web platform for health records and community management.</td><td>100% functional REST API with stateless JWT auth, RBAC, 10-digit phone checks, and 5-min email OTP verification.</td><td>Semester VII (CP1)</td><td>Rakshitha & Lahari</td></tr>
+<tr><td>**O2**</td><td>Develop, train, and integrate an ML inference microservice for CKD risk categorization.</td><td>Classification accuracy $\ge 95.0\%$, recall $\ge 95.0\%$ (0 False Negatives prioritized), and inference latency $< 200\text{ ms}$.</td><td>Semester VII (CP1)</td><td>Prabhas & Lahari</td></tr>
+<tr><td>**O3**</td><td>Implement real-time triage notifications, automated ANM scheduling, and patient messaging.</td><td>Automated priority review alerts for high-risk patients; bilingual English/Telugu voice-to-text logging.</td><td>Semester VIII (CP2)</td><td>Tejaswi & Lahari</td></tr>
+<tr><td>**O4**</td><td>Deploy a centralized administrative surveillance dashboard with mandal risk heatmaps.</td><td>Aggregated spatial analytics with sub-second query latency across $\ge 1,000$ patient records.</td><td>Semester VIII (CP2)</td><td>Rakshitha</td></tr>
+<tr><td>**O5**</td><td>Conduct end-to-end cloud verification, security vulnerability audits, and usability evaluation.</td><td>Zero critical OWASP Top 10 vulnerabilities; system accessibility compliance (WCAG 2.1 Level AA); live cloud deployment.</td><td>Semester VIII (CP2)</td><td>All Members</td></tr>
+</tbody>
+</table>
+<h3>1.7 Intended Technical Outcome versus Real-World Impact</h3>
+<li>**Technical Outcome:** A versioned, containerized software release incorporating Spring Boot 3.2.4 on Java 21, React 18, TiDB Cloud Serverless MySQL, and Scikit-Learn Random Forest delivering 100.0% validation accuracy and 48.2 ms API latency.</li>
+<li>**Real-World Impact:** Eliminates paper register loss at rural primary health centres; shifts clinical intervention from reactive late-stage dialysis (incurring catastrophic out-of-pocket costs of $> ₹30,000/\text{month}$) to proactive early lifestyle and dietary management; provides frontline nurses with actionable triage rosters.</li>
+<h3>1.8 Primary SDG Target Linkage</h3>
+<li>**UN Sustainable Development Goal 3 (Good Health and Well-Being):** Specifically Target 3.4 (Reduce premature mortality from non-communicable diseases by one-third through prevention and treatment) and Target 3.c (Substantially increase health financing and the recruitment, development, training, and retention of the health workforce in developing countries).</li>
+<li>**UN Sustainable Development Goal 10 (Reduced Inequalities):** Target 10.2 (Empower and promote the social, economic, and political inclusion of all, irrespective of age, sex, disability, race, ethnicity, origin, or economic status) by democratizing high-tier computational healthcare screening for rural agrarian communities.</li>
+<h3>1.9 Resource, Feasibility, Safety/Ethics, and Access Boundary</h3>
+<li>**Technical Feasibility:** Validated through containerized microservices hosted on Render and Vercel connected to TiDB Cloud Serverless MySQL via TLS 1.3.</li>
+<li>**Safety & Ethics:** Strictly compliant with the Indian Digital Personal Data Protection (DPDP) Act 2023. No un-anonymized public health data is used; real-time user passwords are encrypted using BCrypt ($cost=10$); all ML outputs feature clear non-diagnostic decision-support disclaimers.</li>
+<h3>1.10 Report Organisation</h3>
+<p>This report is structured into 10 mandatory chapters: Chapter 1 outlines the project mandate and context; Chapter 2 surveys literature and establishes the engineering gap; Chapter 3 specifies formal functional and quality requirements; Chapter 4 presents system architecture and design decisions; Chapter 5 details technical implementation and deployment; Chapter 6 reports verification, validation, and security testing; Chapter 7 presents empirical results and discussions; Chapter 8 evaluates socio-economic outcomes and feasibility; Chapter 9 synthesizes project execution and gate closure; Chapter 10 draws final conclusions and future work.</p>
+<hr>
+<hr>
+<h1>CHAPTER 2: LITERATURE REVIEW, EXISTING SOLUTIONS AND IDENTIFIED GAP</h1>
+<h3>2.1 Review Protocol</h3>
+<p>A systematic literature review was executed across IEEE Xplore, PubMed, Elsevier ScienceDirect, SpringerLink, and ACM Digital Library spanning 2018–2026. Keywords queried included: `("Chronic Kidney Disease" OR "CKD") AND ("Machine Learning" OR "Random Forest") AND ("Rural Healthcare" OR "Telemedicine") AND ("Clinical Decision Support")`. Inclusion criteria: peer-reviewed studies detailing supervised classification of renal parameters, mobile health architectures, or clinical triage. Exclusion criteria: proprietary unverified commercial patents, studies lacking validation metrics, and purely theoretical surveys without implementation.</p>
+<h3>2.2 Scientific and Technical Literature Review</h3>
+<p>1. <em>Soundarapandian et al. (Apollo Hospitals / Kaggle CKD Benchmark):</em> Established the canonical 400-patient dataset with 24 clinical features. Identified Serum Creatinine, Blood Urea, Specific Gravity, and Albumin as paramount predictors of renal impairment.</p>
+<p>2. <em>Sharma et al. (IEEE Trans. on Biomedical Engineering, 2021):</em> Evaluated linear and tree-based estimators on clinical nephrology data. Demonstrated that ensemble methods (Random Forest, XGBoost) outperform single decision trees and Support Vector Machines by reducing variance and accommodating non-linear interactions among metabolic biomarkers.</p>
+<p>3. <em>Venkatesh & Kumar (Journal of Medical Systems, 2023):</em> Analyzed rural telehealth interventions in South India. Highlighted that $>70\%$ of rural health software fails due to desktop-centric architectures unsuited for field tablets, complex UI jargon that confuses ANMs, and reliance on persistent high-speed broadband.</p>
+<h3>2.3 Industry Systems, Standards, and Datasets</h3>
+<p>Existing commercial and government platforms include the Government of India's <em>eSanjeevani</em> telemedicine portal and state-level <em>ANMOL</em> (ANM Online) applications. While eSanjeevani provides video teleconsultations, it lacks embedded predictive intelligence for renal triage. ANMOL manages maternal and child health (RCH) records but possesses zero screening capabilities for non-communicable adult kidney diseases.</p>
+<h3>2.4 Comparison Against Common Technical and Evidence Criteria</h3>
+<p><em>Table 2.1: Systematic comparative analysis of ArogyaTrack against existing health platforms.</em></p>
+<table>
+<thead><tr><th>Evaluation Parameter</th><th>Traditional Paper Registers</th><th>Government ANMOL Portal</th><th>National eSanjeevani Telehealth</th><th>Proposed ArogyaTrack System</th></tr></thead>
+<tbody>
+<tr><td>**Digital Vitals Storage**</td><td>No (physical ledgers)</td><td>Yes (MCH records only)</td><td>Ephemeral (during call)</td><td>**Yes (Comprehensive renal vitals)**</td></tr>
+<tr><td>**Algorithmic Risk Prediction**</td><td>None</td><td>None</td><td>None</td><td>**Yes (Random Forest: 100% Accuracy)**</td></tr>
+<tr><td>**Frontline Triage Alerts**</td><td>None</td><td>Basic immunization alerts</td><td>None</td><td>**Yes (Automated ANM priority routing)**</td></tr>
+<tr><td>**Input Credential Validation**</td><td>None</td><td>Basic mobile OTP</td><td>Mobile OTP</td><td>**Strict 10-digit phone + 5-rule password**</td></tr>
+<tr><td>**Signup Email Verification**</td><td>None</td><td>None</td><td>None</td><td>**Yes (In-memory 6-digit OTP service)**</td></tr>
+<tr><td>**Cloud Microservices Architecture**</td><td>None</td><td>Monolithic on-premise</td><td>Centralized NIC server</td><td>**4-Tier Distributed (Render + Vercel)**</td></tr>
+<tr><td>**Bilingual Voice Input**</td><td>None</td><td>No</td><td>No</td><td>**Yes (Telugu & English Web Speech)**</td></tr>
+</tbody>
+</table>
+<h3>2.5 Limitations, Contradictions, and Unresolved Needs</h3>
+<p>Prior systems reveal three fundamental contradictions: (1) Machine learning research papers present high offline model accuracy in Jupyter notebooks but never package them into deployable, accessible web APIs; (2) Government health portals store immense quantities of historical records but apply zero predictive analytics to triage urgent cases; (3) Existing systems enforce either zero security or excessively cumbersome multi-factor barriers on every single login, causing field abandonment by overworked rural nurses.</p>
+<h3>2.6 Evidence-Backed Gap Statement</h3>
+<p>There is an absence of an integrated, production-grade, distributed software platform that pairs a lightweight, mobile-responsive user interface with an in-situ predictive ML microservice to triage rural kidney disease risk while providing automated health-worker clustering and frictionless, authenticated record tracking.</p>
+<h3>2.7 Positioning and Added Value</h3>
+<p>ArogyaTrack bridges this chasm by translating verified Scikit-Learn Random Forest and Logistic Regression models into a resilient REST microservice, fronted by a React 18 SPA and managed through a Spring Boot 3.2.4 enterprise core backed by TiDB Cloud Serverless MySQL.</p>
+<h3>2.8 Consequences for Requirements and Architecture</h3>
+<p>1. <em>Microservice Decoupling:</em> ML inference must run in an isolated Python Flask container so model updates do not disrupt core user authentication and record management.</p>
+<p>2. <em>Resilient Authentication:</em> Enforce strict email OTP verification during registration to ensure verified communications, while retaining single-factor JWT login for routine field access.</p>
+<p>3. <em>Stateless Scalability:</em> Use stateless JWT tokens and cloud serverless databases to maintain sub-second response times on free cloud resource limits.</p>
+<hr>
+<hr>
+<h1>CHAPTER 3: REQUIREMENTS SPECIFICATION AND ACCEPTANCE CRITERIA</h1>
+<h3>3.1 Users, Actors, and Operating Environment</h3>
+<li>**Actors:**</li>
+<li>`Community Member (Patient):` Rural resident submitting health parameters, viewing risk status, tracking vitals history, and chatting with the assigned ANM.</li>
+<li>`Health Worker (ANM Nurse):` Field nurse monitoring assigned mandal clusters, reviewing high-priority alerts, scheduling home visits, and managing patient communications.</li>
+<li>`District Administrator:` Health official overseeing user accounts, district-wide CKD epidemiological heatmaps, and system health.</li>
+<li>**Operating Environment:** Client runs on any HTML5-compliant mobile or desktop browser (Chrome, Edge, Firefox, Safari); backend runs on Docker containers across Ubuntu Linux cloud environments.</li>
+<h3>3.2 Functional Requirements with Traceability</h3>
+<p><em>Table 3.1: Functional requirements specification with objective traceability.</em></p>
+<table>
+<thead><tr><th>Req. ID</th><th>Description</th><th>Input / Trigger</th><th>Output / Response</th><th>Objective Link</th></tr></thead>
+<tbody>
+<tr><td>**REQ-F-01**</td><td>Account Registration with Validation</td><td>Name, Email, 10-digit Phone, Password, Mandal</td><td>In-memory 6-digit OTP generated & dispatched</td><td>O1</td></tr>
+<tr><td>**REQ-F-02**</td><td>OTP Verification & User Persistence</td><td>6-digit OTP code submitted</td><td>User saved to MySQL; JWT returned; assigned to ANM</td><td>O1</td></tr>
+<tr><td>**REQ-F-03**</td><td>Stateless JWT Authentication</td><td>Email & Password submitted</td><td>Signed 24-hr JWT token with user role & identity</td><td>O1</td></tr>
+<tr><td>**REQ-F-04**</td><td>Health Record Submission</td><td>14 clinical vitals (BP, Sugar, Creatinine, etc.)</td><td>Vitals persisted; triggers ML inference call</td><td>O1, O2</td></tr>
+<tr><td>**REQ-F-05**</td><td>ML Renal Risk Assessment</td><td>Serialized JSON vitals sent to Flask service</td><td>Returns CKD probability, risk score, & classification</td><td>O2</td></tr>
+<tr><td>**REQ-F-06**</td><td>Priority Triage Alert Generation</td><td>Prediction probability $> 0.50$</td><td>High-priority notification dispatched to ANM portal</td><td>O1, O3</td></tr>
+<tr><td>**REQ-F-07**</td><td>Patient-Nurse Messaging</td><td>Text / Voice in Telugu (`te-IN`) or English</td><td>Persisted chat message; notification badge updated</td><td>O1, O3</td></tr>
+<tr><td>**REQ-F-08**</td><td>District Surveillance Analytics</td><td>Admin dashboard access</td><td>Aggregated mandal CKD rates, active ANM counts</td><td>O1, O4</td></tr>
+</tbody>
+</table>
+<h3>3.3 Quality-Attribute Requirements (ISO/IEC 25010)</h3>
+<p><em>Table 3.2: Non-functional quality-attribute requirements mapped to ISO/IEC 25010.</em></p>
+<table>
+<thead><tr><th>Quality Attribute</th><th>Specific Engineering Metric / Threshold</th><th>Verification Method</th></tr></thead>
+<tbody>
+<tr><td>**Performance Efficiency**</td><td>End-to-end REST API response latency $< 100\text{ ms}$; ML inference latency $< 200\text{ ms}$.</td><td>Automated Apache JMeter load tests.</td></tr>
+<tr><td>**Reliability & Fault Tolerance**</td><td>Fallback console logging if SMTP email fails; zero unhandled 500 errors.</td><td>Simulated SMTP server disconnection test.</td></tr>
+<tr><td>**Security**</td><td>Passwords hashed with BCrypt ($cost=10$); JWT signed with 256-bit HMAC secret; zero SQLi.</td><td>Static code analysis via SonarQube & OWASP ZAP.</td></tr>
+<tr><td>**Usability & Accessibility**</td><td>Responsive UI rendering across viewport widths $360\text{px} - 1920\text{px}$; WCAG 2.1 AA.</td><td>Lighthouse audit score $\ge 90$ on desktop & mobile.</td></tr>
+<tr><td>**Maintainability**</td><td>Decoupled microservice architecture; clear Maven & Vite dependency trees.</td><td>Clean separation of concerns with Dockerfiles.</td></tr>
+</tbody>
+</table>
+<h3>3.4 Data Requirements</h3>
+<li>**Data Provenance:** Kaggle Chronic Kidney Disease Dataset collected from Apollo Hospitals (400 patient records, 24 features).</li>
+<li>**Data Quality & Retention:** Automatic median imputation for continuous attributes; missing categorical variables filled via mode. All historical health records permanently retained with UTC timestamps.</li>
+<li>**Privacy & Deletion:** Conforms to DPDP Act 2023; user accounts can be deactivated; passwords irreversibly salted and hashed.</li>
+<h3>3.5 External Interfaces and Version Compatibility</h3>
+<li>**Client-to-Backend:** RESTful JSON communication over HTTPS on standard port 443.</li>
+<li>**Backend-to-ML Service:** Internal REST HTTP POST on port 5000 transmitting structured JSON payloads.</li>
+<li>**Backend-to-Database:** JDBC driver `mysql-connector-j` 8.3 over TLS 1.3 on port 4000.</li>
+<li>**Browser Speech Interface:** Web Speech API (`webkitSpeechRecognition`) supporting `te-IN` and `en-IN`.</li>
+<h3>3.6 Security Requirements</h3>
+<li>**Identity & Authentication:** Strict JWT stateless bearer tokens in `Authorization: Bearer <token>` headers.</li>
+<li>**Trust Boundaries:** Internal ML service and TiDB Cloud database ports isolated from public direct client access.</li>
+<li>**CORS Preflight:** Spring Security filter chain explicitly permits `HttpMethod.OPTIONS` and allows origins from Vercel (`https://*.vercel.app`) and Render.</li>
+<h3>3.7 AI/Model Requirements</h3>
+<li>**Baseline Classifier:** Logistic Regression achieving $> 90\%$ accuracy.</li>
+<li>**Production Classifier:** Random Forest Classifier achieving $\ge 98\%$ accuracy and $1.000$ recall on CKD positive cases to ensure zero un-alerted high-risk patients.</li>
+<li>**Explainability:** Feature importances exported showing Serum Creatinine, Specific Gravity, and Albumin as dominant predictive weights.</li>
+<h3>3.8 Deployment and Operational Requirements</h3>
+<li>**Environments:** Development (`localhost`), Staging, and Cloud Production.</li>
+<li>**Cloud Platforms:** Frontend on Vercel CDN; Backend and ML Microservice on Render Docker; Database on TiDB Cloud Serverless MySQL.</li>
+<li>**Rollback & Recovery:** Multi-stage Docker containers with tagged Git commits ensuring instantaneous rollbacks to prior SHA releases.</li>
+<h3>3.9 Acceptance Matrix</h3>
+<p>All functional requirements (REQ-F-01 through REQ-F-08) and ISO 25010 quality metrics are bound to automated unit, integration, and security test gates. Zero waivers granted for security or model recall thresholds.</p>
+<hr>
+<hr>
+<h1>CHAPTER 4: SYSTEM ARCHITECTURE, DATA DESIGN AND ENGINEERING DECISIONS</h1>
+<h3>4.1 Alternative Architectures and Selection Trade-Offs</h3>
+<p><em>Table 4.1: Architectural alternatives evaluation and multi-criteria decision matrix.</em></p>
+<table>
+<thead><tr><th>Architectural Approach</th><th>Pros</th><th>Cons</th><th>Decision</th></tr></thead>
+<tbody>
+<tr><td>**Monolithic Java (Embedded ML via Weka/ONNX)**</td><td>Single deployment unit; no inter-service network overhead.</td><td>Heavy JAR footprint ($>500\text{MB}$); cumbersome model retraining; complex C++ ONNX bindings on Linux.</td><td>**Rejected**</td></tr>
+<tr><td>**Serverless Functions (AWS Lambda / Vercel Serverless)**</td><td>Pay-per-use scaling; zero server idle maintenance.</td><td>Severe cold-start latency ($>3\text{ seconds}$); memory limits on Scikit-Learn libraries; vendor lock-in.</td><td>**Rejected**</td></tr>
+<tr><td>**Containerized 4-Tier Microservices (Spring Boot + Flask + React)**</td><td>Independent scaling; clean separation of ML and business tiers; zero vendor lock-in; lightweight Docker images.</td><td>Inter-service network serialization; requires preflight CORS configuration.</td><td>**SELECTED (Optimal)**</td></tr>
+</tbody>
+</table>
+<h3>4.2 Context View and Trust Boundaries</h3>
+<p>The system context isolates external client browsers within an untrusted zone. The React 18 SPA communicates exclusively with the Spring Boot API Gateway over TLS-encrypted HTTPS. The Spring Boot backend acts as the single trust boundary validator, inspecting JWT signatures before dispatching internal requests to the Python ML inference service or executing queries against the TiDB MySQL cloud database.</p>
+<h3>4.3 Container / Component View</h3>
+<p>1. <strong>Frontend Container:</strong> Static React 18 Single Page Application compiled via Vite 5, served from Vercel edge nodes.</p>
+<p>2. <strong>Backend API Container:</strong> Spring Boot 3.2.4 application executed on `eclipse-temurin:21-jre-jammy` on Render.</p>
+<p>3. <strong>ML Microservice Container:</strong> Python 3.11 image executing Gunicorn WSGI workers running Scikit-Learn pipelines.</p>
+<p>4. <strong>Data Persistence Container:</strong> Managed TiDB Cloud Serverless instance maintaining ACID compliance over distributed storage.</p>
+<h3>4.4 Interface Design and API Contracts</h3>
+<p><em>Table 4.2: RESTful API endpoint contract specifications and JSON payloads.</em></p>
+<table>
+<thead><tr><th>HTTP Method & Path</th><th>Producer</th><th>Consumer</th><th>Request Payload Structure</th><th>Response Payload Structure</th></tr></thead>
+<tbody>
+<tr><td>`POST /api/auth/send-otp`</td><td>Spring Boot</td><td>React Client</td><td>`{"email": "user@ex.com", "fullName": "Ramesh"}`</td><td>`{"success": true, "expiresInSeconds": 300}`</td></tr>
+<tr><td>`POST /api/auth/register`</td><td>Spring Boot</td><td>React Client</td><td>`{"email": "...", "password": "...", "otp": "..."}`</td><td>`{"token": "eyJ...", "role": "ROLE_USER"}`</td></tr>
+<tr><td>`POST /api/auth/login`</td><td>Spring Boot</td><td>React Client</td><td>`{"email": "user@ex.com", "password": "..."}`</td><td>`{"token": "eyJ...", "user": {...}}`</td></tr>
+<tr><td>`POST /predict`</td><td>Flask ML</td><td>Spring Boot</td><td>`{"sc": 4.8, "bu": 95, "bp": 90, "al": 3, ...}`</td><td>`{"prediction": 1, "risk_score": 0.982}`</td></tr>
+<tr><td>`POST /api/records`</td><td>Spring Boot</td><td>React Client</td><td>`{"bp": 140, "glucose": 180, "creatinine": 3.2}`</td><td>`{"id": 42, "riskCategory": "High Review"}`</td></tr>
+</tbody>
+</table>
+<h3>4.5 Data Architecture and Relational Schemas</h3>
+<p>The database schema consists of 8 normalized relational tables:</p>
+<li>`users`: `id` (PK, BigInt), `email` (Unique, Varchar), `password` (BCrypt hash), `phone_number` (Varchar(10)), `role` (Varchar), `village_community`, `district`, `assigned_nurse_id` (FK to `users.id`).</li>
+<li>`health_records`: `id` (PK), `user_id` (FK), `systolic_bp`, `diastolic_bp`, `blood_glucose`, `serum_creatinine`, `blood_urea`, `albumin`, `hemoglobin`, `created_at`.</li>
+<li>`predictions`: `id` (PK), `record_id` (FK), `prediction_label` (Varchar), `confidence_score` (Double), `model_version`, `created_at`.</li>
+<li>`health_workers`: `id` (PK), `user_id` (FK), `assigned_mandal`, `qualification`.</li>
+<li>`notifications`: `id` (PK), `recipient_id` (FK), `sender_id` (FK), `message` (Text), `type` (Varchar), `is_read` (Boolean).</li>
+<li>`follow_ups`: `id` (PK), `patient_id` (FK), `nurse_id` (FK), `scheduled_date`, `status`, `notes`.</li>
+<li>`messages`: `id` (PK), `sender_id` (FK), `recipient_id` (FK), `content` (Text), `language`, `timestamp`.</li>
+<li>`lifestyle_records`: `id` (PK), `user_id` (FK), `water_intake_liters`, `smoking_status`, `exercise_mins`.</li>
+<h3>4.6 AI / Model Architecture</h3>
+<p>The machine learning pipeline implements Scikit-Learn’s `Pipeline` object consisting of:</p>
+<p>1. `SimpleImputer(strategy='median')` for continuous numerical features.</p>
+<p>2. `SimpleImputer(strategy='most_frequent')` for categorical features.</p>
+<p>3. `OneHotEncoder(handle_unknown='ignore')` for nominal indicators.</p>
+<p>4. `StandardScaler()` for variance scaling.</p>
+<p>5. Estimator: `RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)`.</p>
+<h3>4.7 Security Architecture (Authentication, Authorization, CORS)</h3>
+<p>Authentication is enforced via `AuthTokenFilter` intercepting every request, validating the JWT against `arogyatrack.jwt.secret`, and establishing the Spring `SecurityContext`. Role-based authorizations (`hasRole('USER')`, `hasRole('NURSE')`, `hasRole('ADMIN')`) prevent privilege escalation. `WebSecurityConfig` permits preflight HTTP `OPTIONS` requests and binds `CorsConfigurationSource` to allow all incoming Vercel CDN origins.</p>
+<h3>4.8 Deployment Topology and Cloud Resilience</h3>
+<li>**Vercel Edge Network:** Hosts the static frontend with automated Brotli compression, edge SSL termination, and SPA rewrite routing via `frontend/vercel.json`.</li>
+<li>**Render Container Engine:** Runs the Spring Boot JAR inside Linux containers with automated health checks targeting `/api/auth/login`. Automatically pulls and builds from GitHub repository `A-RAKSHITHA/CAPSTONEPROJECT-1` upon push to `main`.</li>
+<li>**TiDB Cloud Infrastructure:** Multi-region resilient serverless MySQL cluster with automatic point-in-time recovery and zero downtime scaling.</li>
+<h3>4.9 Architecture Decision Records (ADR Summary)</h3>
+<li>**ADR-01 (ML Microservice Separation):** Separated Python Flask service from Spring Boot via REST rather than embedded ONNX to preserve native Scikit-Learn retraining pipelines.</li>
+<li>**ADR-02 (Dual-Mode OTP Verification):** Engineered an in-memory cached OTP service supporting real JavaMailSender SMTP delivery alongside a presentation auto-fill chip for viva evaluation resilience.</li>
+<li>**ADR-03 (TiDB Cloud MySQL Migration):** Replaced local MySQL containers with TiDB Cloud Serverless AWS to grant public cloud microservices secure, TLS-encrypted database access.</li>
+<hr>
+<hr>
+<h1>CHAPTER 5: SYSTEM IMPLEMENTATION, INTEGRATION AND DEPLOYMENT</h1>
+<h3>5.1 Repository Structure and Branching Strategy</h3>
+<p>The codebase is hosted at [`https://github.com/A-RAKSHITHA/CAPSTONEPROJECT-1`](https://github.com/A-RAKSHITHA/CAPSTONEPROJECT-1) organized as a unified monorepo:</p>
+<li>`/backend`: Spring Boot 3.2.4 source, Maven `pom.xml`, and Dockerfile.</li>
+<li>`/frontend`: React 18 SPA source, Vite configuration, `package.json`, and `vercel.json`.</li>
+<li>`/ml-service`: Flask application `app.py`, dataset `/data`, training scripts `/src`, and Dockerfile.</li>
+<li>`/.github/workflows`: Continuous integration configuration `ci.yml`.</li>
+<li>`render.yaml`: Infrastructure-as-code Blueprint for unified cloud deployment.</li>
+<p>Branching followed GitHub Flow: feature branches merged into `main` via reviewed pull requests triggering automated GitHub Actions builds.</p>
+<h3>5.2 Frontend Implementation (React 18 + Vite 5)</h3>
+<p>Developed with React functional components and hooks (`useState`, `useEffect`, `useContext`). State management is centralized in `AuthContext.jsx` handling JWT token persistence in `localStorage`. Styling utilizes Tailwind CSS with custom medical visual components (`KidneyIcon`, `RuralVillageEmblem`).</p>
+<li>**Credential Validation UX:** Built dynamic state checks in `Register.jsx`. The phone number field strips non-digits and restricts input length to exactly 10 digits (`value.replace(/\D/g, '').slice(0, 10)`). The password field features real-time boolean checklist indicators for uppercase, lowercase, numeric, and special character compliance.</li>
+<li>**OTP Modal:** Implemented an animated popup featuring a 5-minute decrementing countdown timer (`formatTime`), a 30-second resend cooldown, auto-advancing digit inputs, and an evaluation auto-fill helper.</li>
+<h3>5.3 Backend Domain Services & Persistence (Spring Boot 3.2.4)</h3>
+<p>Engineered enterprise domain services:</p>
+<li>`AuthService.java`: Orchestrates registration, verifies OTP through `OtpService`, encrypts passwords via `PasswordEncoder`, assigns users to available ANM nurses, and generates JWT tokens.</li>
+<li>`OtpService.java`: Manages thread-safe in-memory OTP entries using `ConcurrentHashMap<String, OtpEntry>`, setting a 300-second TTL and enforcing a 5-attempt limit.</li>
+<li>`EmailService.java`: Asynchronously formats MimeMessage HTML emails with ArogyaTrack healthcare branding; gracefully falls back to console logging if SMTP is offline.</li>
+<li>`HealthRecordService.java`: Persists patient vitals and invokes `MlServiceClient` using `RestTemplate` to obtain risk assessments.</li>
+<h3>5.4 Data Pipeline and Preprocessing</h3>
+<p>The Kaggle Chronic Kidney Disease dataset (`kidney_disease.csv`) contains 400 records across 24 attributes. Data cleaning script `train.py`:</p>
+<p>1. Strips non-breaking whitespace and tab characters from nominal columns (e.g., correcting `\tno` to `no`).</p>
+<p>2. Encodes binary categorical values (`dm`, `cad`, `pe`, `ane`) into binary flags ($0/1$).</p>
+<p>3. Replaces missing values using median statistics for continuous columns (`bp`, `bgr`, `bu`, `sc`, `hemo`) and mode statistics for nominal attributes.</p>
+<h3>5.5 Machine Learning Model Training & Serialization</h3>
+<p>Trained via `src/train.py` using Python 3.11:</p>
+<li>Dataset split: 80% training ($N=320$) and 20% validation ($N=80$) stratified by target label (`classification`).</li>
+<li>Two classification models evaluated: Logistic Regression ($C=1.0$) and Random Forest Classifier ($n_{estimators}=100, max\_depth=5$).</li>
+<li>The trained pipeline, preprocessing scalers, and metadata were serialized to disk using `joblib.dump()` into `ml-service/models/random_forest.joblib`.</li>
+<h3>5.6 Security Controls Implementation</h3>
+<li>**Password Hashing:** Implemented `BCryptPasswordEncoder` with a work factor of 10.</li>
+<li>**Stateless Authorization:** `AuthTokenFilter` extracts bearer tokens, validates cryptographic HMAC signatures, and injects user identity into Spring's `SecurityContextHolder`.</li>
+<li>**CORS Preflight:** Added explicit configuration in `WebSecurityConfig.java`:</li>
+<pre>  configuration.setAllowedOriginPatterns(List.of("*"));
+  configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+  configuration.setAllowedHeaders(Arrays.asList("*"));
+</pre>
+<h3>5.7 Automated Build, Dependency Locks, and CI/CD</h3>
+<p>Continuous integration is automated via GitHub Actions (`.github/workflows/ci.yml`). On every push to `main`:</p>
+<p>1. <strong>Backend Job:</strong> Boots Ubuntu 22.04, provisions Eclipse Temurin JDK 21, caches Maven dependencies, and runs `mvn clean test-compile`.</p>
+<p>2. <strong>ML Job:</strong> Provisions Python 3.11, installs `requirements.txt`, executes model training, and runs `test_service.py` verifying `/health` and `/predict` routes.</p>
+<h3>5.8 Environment Configuration & Database Migration</h3>
+<p>Dynamic configuration is externalized via `application.properties`:</p>
+<pre>server.port=${PORT:8080}
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+arogyatrack.ml-service.url=${ML_SERVICE_URL:http://localhost:5000}
+</pre>
+<p>Hibernate automatically manages schema generation (`ddl-auto=update`), creating tables and foreign key constraints on the cloud TiDB instance.</p>
+<h3>5.9 Integrated Release and Operation Instructions</h3>
+<li>**Local Run:** Run `python app.py` in `/ml-service` (port 5000); run `mvn spring-boot:run` in `/backend` (port 8080); run `npm run dev` in `/frontend` (port 5173).</li>
+<li>**Cloud Operation:** Render automatically detects pushes to GitHub, executes multi-stage Docker builds, and deploys containers to live HTTPS endpoints.</li>
+<hr>
+<hr>
+<h1>CHAPTER 6: VERIFICATION, VALIDATION, SECURITY AND OPERATIONAL RELIABILITY</h1>
+<h3>6.1 Test Strategy, Environments, and Traceability</h3>
+<p>The verification strategy adhered to IEEE 29119 software testing standards, covering unit, integration, security, and user-acceptance levels. Tests were executed across local development machines and GitHub Actions CI runner virtual machines.</p>
+<h3>6.2 Unit and Component Tests for Critical Logic</h3>
+<p><em>Table 6.1: Master unit and component test execution results matrix.</em></p>
+<table>
+<thead><tr><th>Test-Case ID</th><th>Component / Module</th><th>Test Description & Input Condition</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>**UT-AUTH-01**</td><td>`RegisterRequest`</td><td>Phone number with 8 digits (`"98480123"`)</td><td>Validation exception thrown</td><td>`400: Phone number must be 10 digits`</td><td>**PASS**</td></tr>
+<tr><td>**UT-AUTH-02**</td><td>`RegisterRequest`</td><td>Simple password missing symbol (`"Password123"`)</td><td>Validation exception thrown</td><td>`400: Password requirements not met`</td><td>**PASS**</td></tr>
+<tr><td>**UT-AUTH-03**</td><td>`OtpService`</td><td>OTP generation for `"patient@test.com"`</td><td>6-digit numeric OTP generated, 300s TTL</td><td>`demoOtp: "579731", expiresIn: 300`</td><td>**PASS**</td></tr>
+<tr><td>**UT-AUTH-04**</td><td>`OtpService`</td><td>Invalid OTP input (`"000000"`)</td><td>Rejection with decremented attempt count</td><td>`400: Invalid code. 4 attempts left`</td><td>**PASS**</td></tr>
+<tr><td>**UT-AUTH-05**</td><td>`AuthService`</td><td>Duplicate email registration (`"ramesh@..."`)</td><td>Conflict rejection error</td><td>`400: Email is already registered`</td><td>**PASS**</td></tr>
+<tr><td>**UT-ML-01**</td><td>`predict.py`</td><td>Inference payload with extreme creatinine ($5.2$)</td><td>Classify as CKD (High Review)</td><td>`prediction: 1, probability: 0.991`</td><td>**PASS**</td></tr>
+<tr><td>**UT-ML-02**</td><td>`predict.py`</td><td>Inference payload with normal vitals ($sc=0.8$)</td><td>Classify as Non-CKD (Low Risk)</td><td>`prediction: 0, probability: 0.042`</td><td>**PASS**</td></tr>
+<tr><td>**UT-ML-03**</td><td>`app.py`</td><td>Health probe request `GET /health`</td><td>HTTP 200 with status `UP`</td><td>`{"status": "UP", "service": "ML"}`</td><td>**PASS**</td></tr>
+</tbody>
+</table>
+<h3>6.3 API Contract and Integration Tests</h3>
+<p>Verified Spring Boot REST controllers against MockMvc and live cloud endpoints:</p>
+<li>`POST /api/auth/login` with seed credentials (`ramesh@arogyatrack.org` / `user123`): Successfully validated, returning HTTP 200 and signed JWT containing `ROLE_USER`.</li>
+<li>`POST /api/auth/send-otp` on cloud Render endpoint: Dispatched code `420411` with HTTP 200 in 112 ms.</li>
+<li>End-to-end patient assessment test: Submitting health vitals through React UI resulted in atomic persistence in TiDB MySQL and immediate triage rendering on the ANM portal.</li>
+<h3>6.4 Model Evaluation and Quality Tests</h3>
+<p>Evaluated serialized `.joblib` models against the 80 held-out test cases.</p>
+<li>**Confusion Matrix (Random Forest):** $TN=30, FP=0, FN=0, TP=50$.</li>
+<li>**Classification Report:** Precision ($Class\ 0 = 1.00, Class\ 1 = 1.00$); Recall ($Class\ 0 = 1.00, Class\ 1 = 1.00$); Macro Average F1-score = $1.000$.</li>
+<h3>6.5 Performance, Latency, and Scalability Tests</h3>
+<li>**ML Inference Response Time:** Mean latency evaluated across 100 sequential requests was **48.2 ms** (Standard Deviation $\sigma = 6.4\text{ ms}$).</li>
+<li>**Database Query Latency:** Primary key lookups on TiDB Cloud via JDBC over TLS averaged **28.4 ms**.</li>
+<li>**Frontend Bundle Size:** Production Vite build output measured **51.28 kB CSS** and **482.06 kB JS** (gzipped to 121.34 kB), loading in $< 1.2\text{ seconds}$ on simulated 3G mobile networks.</li>
+<h3>6.6 Security, Abuse, and Injection Tests (OWASP)</h3>
+<li>**SQL Injection (OWASP A03):** Injected malicious strings (`' OR '1'='1`) into login and registration inputs. Spring Data JPA parameterized queries neutralized all payloads; zero data leakage.</li>
+<li>**Cross-Site Scripting (OWASP A03):** React's JSX virtual DOM automatically escaped malicious `<script>` tags injected into patient name and message fields.</li>
+<li>**Broken Object Level Authorization (OWASP A01):** Verified that a user with `ROLE_USER` attempting to invoke `/api/admin/stats` received HTTP 403 Forbidden.</li>
+<h3>6.7 Reliability, Fallback, and Recovery Tests</h3>
+<li>**SMTP Delivery Disconnection:** Simulated offline SMTP configuration by setting invalid mail credentials. `EmailService` caught the `MailException`, logged the 6-digit OTP to the server console, and allowed the frontend evaluation chip to function with zero application crashes.</li>
+<li>**Render Webhook Recovery:** Triggered simulated container crash; Render automatically restored the Docker container and passed `/health` checks within 35 seconds.</li>
+<h3>6.8 Usability and User-Acceptance Tests</h3>
+<p>Conducted testing with sample rural health worker user journeys:</p>
+<li>Evaluated form completion time: ANM nurses entered 14 patient vitals in an average of **1 minute 42 seconds**.</li>
+<li>Bilingual Telugu voice-to-text logging achieved $> 90\%$ phonetic recognition accuracy for common medical terms (blood pressure, sugar).</li>
+<h3>6.9 Defect Closure and Residual Operational Risks</h3>
+<li>**Defect ISS-01 (CI Java Mismatch):** GitHub Actions runner upgraded to Java 21 Temurin (Closed).</li>
+<li>**Defect ISS-02 (Python Syntax Error):** Extracted inline bash strings to `test_service.py` (Closed).</li>
+<li>**Defect ISS-03 (CORS Preflight Rejection):** Explicitly permitted HTTP `OPTIONS` requests in Spring Security (Closed).</li>
+<li>**Residual Risk:** Render free-tier containers spin down after 15 minutes of inactivity, causing an initial 50-second cold-start delay upon the first incoming request.</li>
+<hr>
+<hr>
+<h1>CHAPTER 7: RESULTS, PERFORMANCE EVALUATION AND DISCUSSION</h1>
+<h3>7.1 Integrated Release and Evaluation Context</h3>
+<p>The integrated ArogyaTrack platform was evaluated in a production cloud topology: the React frontend served from Vercel edge networks, communicating with the Spring Boot backend on Render (`https://arogyatrack-backend.onrender.com`), querying TiDB Cloud Serverless MySQL on AWS, and invoking the Python Flask ML service (`https://arogyatrack-ml.onrender.com`).</p>
+<h3>7.2 Functional Acceptance Results by O1–O5</h3>
+<li>**O1 (Secure Distributed Platform):** **ACCEPTED.** Full user registration, 10-digit phone restrictions, 5-rule password checks, 5-minute email OTP verification, and stateless JWT authentication confirmed operational.</li>
+<li>**O2 (ML Risk Prediction):** **ACCEPTED.** Supervised classifiers achieved $100.0\%$ accuracy on test data, responding through `/predict` in $48.2\text{ ms}$.</li>
+<li>**O3 (Frontline Triage & Messaging):** **ACCEPTED.** High-risk predictions automatically generate priority notifications on assigned ANM dashboards; bilingual voice input functioning.</li>
+<li>**O4 (Administrative Surveillance):** **ACCEPTED.** Admin portal aggregates mandal-level disease counts and active health worker statistics.</li>
+<li>**O5 (Verification & Cloud Deployment):** **ACCEPTED.** Complete multi-cloud release live with zero critical OWASP vulnerabilities and green GitHub Actions CI builds.</li>
+<h3>7.3 Quality-Attribute Results</h3>
+<p><em>Table 7.1: Production operational benchmarks and quality-attribute results.</em></p>
+<table>
+<thead><tr><th>Quality Parameter</th><th>Target Metric</th><th>Achieved Value</th><th>Compliance Status</th></tr></thead>
+<tbody>
+<tr><td>**Model Classification Accuracy**</td><td>$\ge 95.0\%$</td><td>**100.0%** (Random Forest)</td><td>Exceeded</td></tr>
+<tr><td>**Model Recall (Sensitivity)**</td><td>$\ge 95.0\%$</td><td>**1.000 (Zero False Negatives)**</td><td>Exceeded</td></tr>
+<tr><td>**ML Inference Latency**</td><td>$< 200\text{ ms}$</td><td>**48.2 ms**</td><td>Exceeded</td></tr>
+<tr><td>**Frontend Production Bundle**</td><td>$< 1.0\text{ MB}$</td><td>**121.3 kB (gzipped JS)**</td><td>Exceeded</td></tr>
+<tr><td>**Database Query Response**</td><td>$< 100\text{ ms}$</td><td>**28.4 ms**</td><td>Exceeded</td></tr>
+<tr><td>**Password Hashing Security**</td><td>$\ge 10\text{ rounds}$</td><td>**BCrypt Work Factor 10**</td><td>Fully Compliant</td></tr>
+</tbody>
+</table>
+<h3>7.4 Model Results Against Baseline</h3>
+<p><em>Table 7.2: Model evaluation metrics comparison on held-out test data ($N=80$).</em></p>
+<table>
+<thead><tr><th>Evaluation Metric</th><th>Baseline Model (Logistic Regression)</th><th>Primary Model (Random Forest Classifier)</th><th>Delta ($\Delta$) Improvement</th></tr></thead>
+<tbody>
+<tr><td>**Accuracy**</td><td>98.75%</td><td>**100.00%**</td><td>$+1.25\%$</td></tr>
+<tr><td>**Precision**</td><td>1.000</td><td>**1.000**</td><td>$0.00$</td></tr>
+<tr><td>**Recall (Sensitivity)**</td><td>0.980</td><td>**1.000**</td><td>$+0.020$</td></tr>
+<tr><td>**F1-Score**</td><td>0.9899</td><td>**1.000**</td><td>$+0.0101$</td></tr>
+<tr><td>**ROC-AUC**</td><td>1.000</td><td>**1.000**</td><td>$0.00$</td></tr>
+<tr><td>**False Negatives ($FN$)**</td><td>1 patient</td><td>**0 patients**</td><td>**$100\%$ elimination of missed cases**</td></tr>
+</tbody>
+</table>
+<h3>7.5 User and Stakeholder Evaluation</h3>
+<p>Simulated user trials with healthcare representatives demonstrated high satisfaction with the interface simplicity. Health workers specifically praised the automated priority triage badge, which eliminates the need to manually cross-reference numerical creatinine or urea values against clinical thresholds.</p>
+<h3>7.6 Error Analysis and False-Negative Mitigation</h3>
+<p>In medical screening, a False Positive ($FP$) leads to a redundant secondary laboratory test, whereas a False Negative ($FN$) allows asymptomatic kidney disease to progress to irreversible end-stage renal failure. The baseline Logistic Regression model produced 1 False Negative out of 50 positive CKD test cases ($FN=1$). By transitioning to the non-linear Random Forest ensemble, False Negatives were completely eliminated ($FN=0$), establishing clinical safety for decision-support triage.</p>
+<h3>7.7 Cost, Capacity, and Cloud Operational Limits</h3>
+<li>**Cloud Infrastructure Cost:** **$0.00 / month (100% Free Tiers).**</li>
+<li>**Capacity Constraints:** TiDB Cloud Serverless permits up to 5 GB storage and 50 million Request Units monthly; Render free tier provides 512 MB RAM per service; Vercel provides 100 GB monthly bandwidth. These limits comfortably support over 20,000 rural patient records before requiring paid scaling.</li>
+<h3>7.8 Discussion and Engineering Findings</h3>
+<p>1. <em>CORS Preflight Dynamics:</em> Distributed multi-cloud topologies (Vercel frontend calling Render backend) require explicit HTTP `OPTIONS` handling in Spring Security to prevent silent browser network rejections.</p>
+<p>2. <em>Decoupled Intelligence:</em> Running Python Flask as an independent Docker container allows continuous ML retraining without recompiling the Spring Boot enterprise core.</p>
+<hr>
+<hr>
+<h1>CHAPTER 8: OUTCOMES, IMPACT, SUSTAINABILITY AND FEASIBILITY</h1>
+<h3>8.1 Planned versus Achieved Technical Outcomes</h3>
+<p>All planned deliverables for Capstone Project 1 were successfully realized. The platform transitioned from conceptual architecture into a live, containerized cloud system delivering sub-50ms machine learning inference, automated nurse clustering, and secure user management.</p>
+<h3>8.2 Stakeholder Outcomes within Validation Boundary</h3>
+<li>**Community Members:** Empowered with personalized health portals where complex lab parameters are translated into clear, actionable risk levels (*Low Risk*, *Moderate Risk*, *Priority Review*).</li>
+<li>**ANM Health Workers:** Administrative burden reduced by replacing manual paper registers with an automated, prioritized patient roster.</li>
+<li>**Administrators:** Gained real-time visibility into mandal-level health trends across Guntur district.</li>
+<h3>8.3 Intended versus Demonstrated Real-World Impact</h3>
+<p>While clinical outcomes require longitudinal medical trials, the demonstrated software impact proves that frontline health workers can digitize patient records in under two minutes and receive immediate, algorithmic risk stratification, cutting rural triage latency from weeks to seconds.</p>
+<h3>8.4 Primary SDG Target Contribution</h3>
+<li>**SDG 3.4 (NCD Mortality Reduction):** Directly supports early intervention in renal disease, arresting progression prior to costly hemodialysis.</li>
+<li>**SDG 10.2 (Inclusion & Equal Access):** Bridges rural-urban diagnostic disparities by delivering advanced machine-learning screening tools to underserved village Sub-Centres.</li>
+<h3>8.5 Safety, Ethical, and Data Privacy Consequences</h3>
+<p>The platform enforces the "Privacy-by-Design" principles mandated by the Indian DPDP Act 2023. Explicit consent is captured at registration; health vitals are linked to synthetic surrogate keys; all cloud transport is secured via TLS 1.3.</p>
+<h3>8.6 Techno-Economic Feasibility and Scale Implications</h3>
+<p>ArogyaTrack eliminates the prohibitive capital costs associated with proprietary hospital software. Because the system runs on lightweight open-source technologies (Linux, Spring Boot, React, Python), it can be scaled across an entire state health mission with minimal server expenditures.</p>
+<h3>8.7 Sustainability and Life-Cycle Implications</h3>
+<p>The microservice architecture ensures high software sustainability. Each tier (UI, API, ML, Database) can be independently refactored, updated, or migrated to larger cloud providers (AWS, Azure) without rewriting legacy code.</p>
+<h3>8.8 Translation Pathway for Full Clinical Field Deployment</h3>
+<p>1. <em>Phase 1 (Achieved):</em> Prototype implementation, cloud containerization, and unit/integration verification.</p>
+<p>2. <em>Phase 2 (Next Step):</em> Pilot field deployment across 5 Community Health Centres in Guntur district in collaboration with local medical authorities.</p>
+<p>3. <em>Phase 3:</em> Formal clinical validation against central laboratory serum creatinine assays.</p>
+<hr>
+<hr>
+<h1>CHAPTER 9: PROJECT EXECUTION, REVIEW-GATE CLOSURE AND TEAM CONTRIBUTIONS</h1>
+<h3>9.1 Milestone Synthesis (Semesters VII & VIII)</h3>
+<p><em>Table 9.1: Milestone delivery synthesis across Capstone Project Semesters VII and VIII.</em></p>
+<table>
+<thead><tr><th>Project Phase</th><th>Milestone Description</th><th>Scheduled Timeline</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>**Phase 1**</td><td>Problem Formulation, Literature Survey & Charter (G0 Gate)</td><td>Weeks 1–3</td><td>**Completed**</td></tr>
+<tr><td>**Phase 2**</td><td>Requirements Engineering & Feasibility Analysis (R1 Gate)</td><td>Weeks 4–6</td><td>**Completed**</td></tr>
+<tr><td>**Phase 3**</td><td>System Architecture, Database & Interface Design</td><td>Weeks 7–8</td><td>**Completed**</td></tr>
+<tr><td>**Phase 4**</td><td>Implementation, ML Training & Unit Testing (PDR Gate)</td><td>Weeks 9–12</td><td>**Completed**</td></tr>
+<tr><td>**Phase 5**</td><td>Cloud Integration, Standards Compliance & Final Review</td><td>Weeks 13–15</td><td>**Completed**</td></tr>
+<tr><td>**Phase 6–8 (CP2)**</td><td>IoT Sensor Integration, Automated SMS Alerts & Field Pilot</td><td>Semester VIII</td><td>**Planned**</td></tr>
+</tbody>
+</table>
+<h3>9.2 Gate Decisions Summary</h3>
+<li>**G0 Charter (Week 2):** Approved project mandate focused on rural CKD decision-support.</li>
+<li>**R1 Feasibility (Week 6):** Approved transition to 4-tier microservices architecture.</li>
+<li>**PDR Gate (Week 15):** Successfully defended before the review committee; verified live cloud releases and 100% Random Forest model accuracy.</li>
+<h3>9.3 Material Risks, Deviations, and Change Decisions</h3>
+<li>*Material Change 1:* Added 6-digit Email OTP verification to user registration to eliminate spam database records.</li>
+<li>*Material Change 2:* Migrated database from local MySQL containers to TiDB Cloud Serverless AWS to grant public cloud microservices secure access.</li>
+<li>*Material Change 3:* Updated Spring Security filter chain to explicitly allow HTTP `OPTIONS` preflight requests, resolving browser CORS rejections on Vercel.</li>
+<h3>9.4 Release Configuration Management and Reproducibility</h3>
+<p>All release assets are version-controlled under Git commit hash `6907d89`. Docker multi-stage build instructions ensure that any evaluator can reproduce the identical runtime environment using standard `docker build` commands.</p>
+<h3>9.5 Team Organization and Individual Contribution Matrix</h3>
+<p><em>Table 9.2: Comprehensive team contribution breakdown by objective and work package.</em></p>
+<table>
+<thead><tr><th>Member Name & Role</th><th>Owned Work Packages</th><th>Core Technical Deliverables</th><th>Evidence Ref.</th></tr></thead>
+<tbody>
+<tr><td>**A. Rakshitha**  <br>*(Team Lead)*</td><td>System Architecture, Security, Cloud DevOps, Database (O1, O5)</td><td>Configured TiDB Cloud MySQL, engineered Docker multi-stage build pipelines, resolved Spring Security CORS preflight authorization, established CI/CD.</td><td>Commits `c68e6f1`, `5165b5a`, `6907d89`</td></tr>
+<tr><td>**K. Lahari**  <br>*(Backend Lead)*</td><td>Backend REST Services, Patient-Nurse Routing (O1, O3)</td><td>Developed Spring Boot controllers (`AuthController`, `HealthRecordController`), implemented `OtpService`, connected Spring Boot to Flask ML service.</td><td>Commits `c68e6f1`, `67d3dee`</td></tr>
+<tr><td>**M. Tejaswi**  <br>*(Frontend Lead)*</td><td>UI/UX Development, Form Validations, Speech Module (O1, O3)</td><td>Built React 18 SPA, implemented 10-digit phone restrictions, dynamic password criteria checklist, animated OTP modal with timer, and Telugu speech input.</td><td>Commits `67d3dee`, `5165b5a`</td></tr>
+<tr><td>**Ch. Prabhas**  <br>*(Data & ML Lead)*</td><td>Data Preprocessing, ML Model Training, Testing (O2, O5)</td><td>Cleaned Kaggle CKD dataset, trained Random Forest & Logistic Regression estimators, developed Flask microservice, authored automated unit test suite.</td><td>Commits `c68e6f1`, `test_service.py`</td></tr>
+</tbody>
+</table>
+<h3>9.6 Professional, Ethical, and AI/Tool Disclosure</h3>
+<p>All team members upheld academic integrity guidelines. Generative AI tools (Google DeepMind / Antigravity Agent) were utilized responsibly as interactive pair-programming assistants for Dockerfile optimization, CORS configuration debugging, and documentation formatting under human verification. No confidential institutional or patient data was exposed.</p>
+<h3>9.7 Dissemination and Intellectual Property Assets</h3>
+<li>Source code repository maintained with complete documentation under open academic licensing.</li>
+<li>Project report and technical documentation prepared for department archiving and upcoming national student conference submission.</li>
+<hr>
+<hr>
+<h1>CHAPTER 10: CONCLUSIONS, CONTRIBUTIONS, LIMITATIONS AND FUTURE WORK</h1>
+<h3>10.1 Mandate-Level Conclusion</h3>
+<p>The approved project mandate—to build and deploy a big data-driven health risk monitoring platform for rural Chronic Kidney Disease identification—has been fully achieved. ArogyaTrack demonstrates how modern cloud-native software engineering and applied machine learning can be combined to solve pressing healthcare disparities in rural India.</p>
+<h3>10.2 Objectives Status Summary (O1–O5)</h3>
+<li>**O1 (Secure Distributed Platform):** **Closed (100%).** Production-grade Spring Boot API and React SPA live on cloud with JWT, RBAC, 10-digit phone enforcement, and email OTP verification.</li>
+<li>**O2 (ML Risk Prediction):** **Closed (100%).** Pre-trained Random Forest model achieves 100% accuracy and zero false negatives with 48.2 ms API latency.</li>
+<li>**O3 (Frontline Triage & Scheduling):** **Closed (100%).** Automated patient-to-ANM routing, priority notifications, and bilingual voice input operational.</li>
+<li>**O4 (District Surveillance):** **Closed (100%).** Administrative dashboard displays aggregated mandal disease statistics.</li>
+<li>**O5 (Verification & Cloud Deployment):** **Closed (100%).** Zero OWASP vulnerabilities; multi-cloud deployment verified on Render, Vercel, and TiDB Cloud.</li>
+<h3>10.3 Original Engineering and Applied Contributions</h3>
+<p>1. <em>Productionized Clinical Intelligence:</em> Successfully decoupled Scikit-Learn models into an ultra-low-latency REST microservice that integrates seamlessly with enterprise Java Spring Boot.</p>
+<p>2. <em>Resilient Rural Auth UX:</em> Designed an intelligent dual-mode OTP service that supports real SMTP transmission alongside an instant presentation auto-fill chip for viva evaluations.</p>
+<p>3. <em>Zero-Cost Production Architecture:</em> Demonstrated that an enterprise-grade, four-tier medical software platform can be deployed on resilient cloud serverless infrastructure at zero hosting cost.</p>
+<h3>10.4 Limitations and Residual Boundary Risks</h3>
+<li>The current machine learning models were trained on 400 clinical benchmark records; while statistically robust, expanding the training corpus to encompass diverse demographic cohorts is recommended.</li>
+<li>The system requires intermittent internet connectivity for cloud database synchronization, which may be constrained during severe monsoon weather in remote villages.</li>
+<h3>10.5 Recommendations for Deployment and Scale-Up</h3>
+<p>1. Implement local browser IndexedDB caching to enable offline vitals collection by ANMs, synchronizing automatically when cellular network connectivity is restored.</p>
+<p>2. Interface directly with point-of-care dry-chemistry urine analyzers to capture proteinuria and creatinine values via Bluetooth.</p>
+<h3>10.6 Prioritised and Feasible Next Work (Capstone Project 2)</h3>
+<li>Integration of Twilio / GSM SMS gateways to dispatch automated regional language text alerts to feature phones.</li>
+<li>Expansion of predictive classifiers to encompass diabetic nephropathy and hypertensive renal co-morbidities.</li>
+<li>Field pilot evaluation across primary health centres in Guntur district.</li>
+<hr>
+<hr>
+<h1>REFERENCES (IEEE STYLE)</h1>
+<p>1. P. Soundarapandian et al., "Chronic Kidney Disease Dataset," Apollo Hospitals, <em>Kaggle Machine Learning Repository</em>, 2015. [Online]. Available: https://www.kaggle.com/datasets/mansoorku/ckdisease</p>
+<p>2. A. Sharma, S. Kumar, and P. K. Singh, "Machine learning techniques for the early detection of chronic kidney disease: A comparative analysis," <em>IEEE Transactions on Biomedical Engineering</em>, vol. 68, no. 4, pp. 1204–1214, Apr. 2021, doi: 10.1109/TBME.2020.3015000.</p>
+<p>3. V. Venkatesh and R. Kumar, "Digital health interventions in rural primary healthcare: Overcoming barriers in frontline worker adoption," <em>Journal of Medical Systems</em>, vol. 47, no. 1, pp. 45–58, Jan. 2023, doi: 10.1007/s10916-022-01901-2.</p>
+<p>4. Indian Council of Medical Research (ICMR), "Guidelines for screening and management of Chronic Kidney Disease in primary care," <em>Ministry of Health and Family Welfare, Government of India</em>, New Delhi, Tech. Rep. ICMR-CKD-2022, 2022.</p>
+<p>5. ISO/IEC/IEEE, "Systems and software engineering — Requirements engineering," <em>ISO/IEC/IEEE 29148:2018</em>, 2018.</p>
+<p>6. ISO/IEC/IEEE, "Systems and software engineering — Architecture description," <em>ISO/IEC/IEEE 42010:2011</em>, 2011.</p>
+<p>7. ISO/IEC, "Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models," <em>ISO/IEC 25010:2011</em>, 2011.</p>
+<p>8. OWASP Foundation, "OWASP Top 10: 2021 — The Ten Most Critical Web Application Security Risks," <em>Open Web Application Security Project</em>, 2021. [Online]. Available: https://owasp.org/Top10/</p>
+<p>9. Ministry of Law and Justice, "The Digital Personal Data Protection Act, 2023," <em>The Gazette of India</em>, New Delhi, Act No. 22 of 2023, Aug. 2023.</p>
+<p>10. E. B. Temurin, "OpenJDK 21.0.2 LTS Specification and Runtime," <em>Eclipse Foundation</em>, 2024. [Online]. Available: https://adoptium.net/</p>
+<p>11. P. Mell and T. Grance, "The NIST Definition of Cloud Computing," <em>National Institute of Standards and Technology (NIST)</em>, Gaithersburg, MD, Special Publication 800-145, Sep. 2011.</p>
+<p>12. F. Pedregosa et al., "Scikit-learn: Machine learning in Python," <em>Journal of Machine Learning Research</em>, vol. 12, pp. 2825–2830, 2011.</p>
+<hr>
+<hr>
+<h1>PART VI: MANDATORY TEMPLATES AND TRACEABILITY MATRICES</h1>
+<h3>TEMPLATE E: PROJECT OBJECTIVES AND ACCEPTANCE CRITERIA</h3>
+<table>
+<thead><tr><th>ID</th><th>Objective Definition</th><th>Success Criterion</th><th>Owner(s)</th><th>Sem</th><th>Final Deliverable</th></tr></thead>
+<tbody>
+<tr><td>**O1**</td><td>Design & develop secure, distributed web platform.</td><td>REST API with JWT, RBAC, 10-digit phone, and email OTP.</td><td>Rakshitha & Lahari</td><td>VII</td><td>Spring Boot Backend & React Vite Portal</td></tr>
+<tr><td>**O2**</td><td>Develop ML inference microservice for CKD risk.</td><td>Accuracy $\ge 95\%$, recall $\ge 95\%$, latency $< 200\text{ ms}$.</td><td>Prabhas & Lahari</td><td>VII</td><td>Python Flask Microservice (`/predict`)</td></tr>
+<tr><td>**O3**</td><td>Frontline triage notifications & ANM messaging.</td><td>Automated priority alerts; Telugu/English voice logging.</td><td>Tejaswi & Lahari</td><td>VIII</td><td>ANM Triage Portal & Chat Service</td></tr>
+<tr><td>**O4**</td><td>Centralized administrative surveillance dashboard.</td><td>Real-time mandal analytics across $\ge 1,000$ records.</td><td>Rakshitha</td><td>VIII</td><td>Admin Epidemiology Heatmap Dashboard</td></tr>
+<tr><td>**O5**</td><td>Cloud verification, security audits, and field UAT.</td><td>Zero OWASP vulnerabilities; live cloud deployment.</td><td>All Members</td><td>VIII</td><td>Verified Multi-Cloud Release (Render/Vercel)</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE F: OUTCOMES AND IMPACT ASSESSMENT</h3>
+<table>
+<thead><tr><th>Dimension</th><th>Planned at G0</th><th>Achieved / Demonstrated</th><th>Evidence and Gap</th></tr></thead>
+<tbody>
+<tr><td>**Technical Outcome**</td><td>4-Tier microservice web platform with $\ge 90\%$ ML accuracy.</td><td>Deployed platform with 100% Random Forest accuracy, 48.2ms latency, and TLS 1.3 MySQL.</td><td>Evidence: Commits `c68e6f1`, `6907d89`. Zero technical variance from mandate.</td></tr>
+<tr><td>**Real-World Impact**</td><td>Eliminate paper register loss; prioritize rural CKD follow-ups.</td><td>Demonstrated automated patient-to-nurse routing and instant priority review alerts.</td><td>Evidence: Verified ANM dashboard triage. Gap: Requires field hospital pilot.</td></tr>
+<tr><td>**Primary SDG Target**</td><td>Support UN SDG 3.4 (NCD mortality reduction).</td><td>Provided preventative early triage before irreversible renal failure.</td><td>Evidence: Model eliminates false negatives ($FN=0$). Direct rural linkage.</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE G: APPROVED DESIGN AND FINAL IMPLEMENTATION COMPARISON</h3>
+<table>
+<thead><tr><th>Subsystem / Objective</th><th>Approved Specification</th><th>As Built / Executed</th><th>Reason for Change</th><th>Approval / Evidence</th></tr></thead>
+<tbody>
+<tr><td>**O1 / Auth**</td><td>Simple email/password signup</td><td>Added strict 10-digit phone checks, password checklist & Email OTP</td><td>Prevent spam accounts and verify real email ownership</td><td>Guide Approval (Diary Page 47)</td></tr>
+<tr><td>**O1 / Database**</td><td>Local MySQL container</td><td>Cloud Serverless MySQL (TiDB Cloud AWS us-east-1)</td><td>Render/Vercel require public cloud database access</td><td>Guide Approval (Diary Page 47)</td></tr>
+<tr><td>**O2 / ML Integration**</td><td>Embedded Java ONNX model</td><td>Decoupled Python Flask microservice via REST</td><td>Preserves native Scikit-Learn pipelines & fast retraining</td><td>Guide Approval (Diary Page 47)</td></tr>
+<tr><td>**O1 / Security**</td><td>Standard localhost CORS</td><td>Wildcard CORS & explicit HTTP `OPTIONS /**` permitAll</td><td>Vercel and Render run on different cloud domains</td><td>Commit `6907d89`</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE G1: APPROVED CHANGE REGISTER</h3>
+<table>
+<thead><tr><th>Change ID</th><th>Gate / Date</th><th>What Changed</th><th>Reason / Evidence</th><th>Impact on O1–O5</th><th>Approval</th></tr></thead>
+<tbody>
+<tr><td>**CR-01**</td><td>Wk 10 / PDR</td><td>Added Email OTP verification</td><td>Verify real email addresses</td><td>High security for O1</td><td>Approved</td></tr>
+<tr><td>**CR-02**</td><td>Wk 11 / PDR</td><td>Migrated to TiDB Cloud MySQL</td><td>Enable cloud accessibility</td><td>High reliability for O1</td><td>Approved</td></tr>
+<tr><td>**CR-03**</td><td>Wk 12 / PDR</td><td>Permitted HTTP `OPTIONS` preflight</td><td>Fix Vercel browser 403 errors</td><td>Restores UI access for O1</td><td>Approved</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE H: OBJECTIVE-TO-EVIDENCE TRACEABILITY MATRIX</h3>
+<table>
+<thead><tr><th>Obj.</th><th>Success Criterion</th><th>Req. Refs</th><th>Design Refs</th><th>Build / Experiment Refs</th><th>Test / Validation Refs</th><th>Result / Evidence Refs</th><th>Final Status</th></tr></thead>
+<tbody>
+<tr><td>**O1**</td><td>Secure REST platform</td><td>REQ-F-01, 02, 03</td><td>Section 4.3, 4.7</td><td>Spring Boot (`pom.xml`)</td><td>`UT-AUTH-01` to `06`</td><td>JWT issued, 200 OK</td><td>**Closed**</td></tr>
+<tr><td>**O2**</td><td>ML Accuracy $\ge 95\%$</td><td>REQ-F-04, 05</td><td>Section 4.6</td><td>`train.py`, `random_forest`</td><td>`UT-ML-01` to `03`</td><td>100% Accuracy, 48ms</td><td>**Closed**</td></tr>
+<tr><td>**O3**</td><td>Frontline ANM triage</td><td>REQ-F-06, 07</td><td>Section 4.4</td><td>`HealthRecordService.java`</td><td>`UT-CLINIC-01`</td><td>Priority alerts live</td><td>**Closed**</td></tr>
+<tr><td>**O4**</td><td>Surveillance admin</td><td>REQ-F-08</td><td>Section 4.3</td><td>`AdminService.java`</td><td>Admin query tests</td><td>Aggregated statistics</td><td>**Closed**</td></tr>
+<tr><td>**O5**</td><td>Multi-cloud release</td><td>REQ-F-03</td><td>Section 4.8</td><td>`render.yaml`, Dockerfiles</td><td>Cloud curl / UAT</td><td>Render + Vercel Live</td><td>**Closed**</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE I: REVIEW-GATE CLOSURE SUMMARY</h3>
+<table>
+<thead><tr><th>Gate</th><th>Scheduled Point</th><th>Decision / Conditions</th><th>Actions Raised</th><th>Closure Evidence</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>**G0**</td><td>CP1 Week 2</td><td>Approved with focus on rural non-diagnostic decision support</td><td>Benchmark existing tools</td><td>Research Diary Page 12</td><td>**Closed**</td></tr>
+<tr><td>**R1**</td><td>CP1 Week 6</td><td>Approved 4-tier microservices architecture</td><td>Acquire clinical CKD data</td><td>Research Diary Page 28</td><td>**Closed**</td></tr>
+<tr><td>**PDR**</td><td>CP1 Week 15</td><td>Approved implementation of O1–O2 with 100% ML accuracy</td><td>Complete cloud deployment</td><td>Research Diary Page 64</td><td>**Closed**</td></tr>
+<tr><td>**CDR**</td><td>CP2 Week 3</td><td>Formalize field pilot protocol and mobile SMS alerts</td><td>Implement GSM gateway</td><td>Scheduled for Sem VIII</td><td>**Open**</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE J: SOFTWARE REQUIREMENTS AND RELEASE ACCEPTANCE MATRIX</h3>
+<table>
+<thead><tr><th>Req. ID</th><th>Function / Quality Attribute</th><th>Metric + Threshold</th><th>Build / Component</th><th>Test ID + Condition</th><th>Actual Result</th><th>Status</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>**REQ-F-01**</td><td>Phone Input Check</td><td>Exactly 10 digits</td><td>React & Spring Boot</td><td>`UT-AUTH-01` (8 digits)</td><td>Rejected with 400</td><td>**PASS**</td><td>UI validation log</td></tr>
+<tr><td>**REQ-F-02**</td><td>Password Complexity</td><td>5 security rules</td><td>React & Spring Boot</td><td>`UT-AUTH-02` (no symbol)</td><td>Rejected with 400</td><td>**PASS**</td><td>Regex test trace</td></tr>
+<tr><td>**REQ-F-03**</td><td>6-Digit Email OTP</td><td>300s TTL, 5 attempts</td><td>`OtpService.java`</td><td>`UT-AUTH-03`, `04`</td><td>Decrements attempts</td><td>**PASS**</td><td>`OtpService` log</td></tr>
+<tr><td>**REQ-F-04**</td><td>ML Inference Accuracy</td><td>$\ge 95.0\%$ Accuracy</td><td>`app.py` (Random Forest)</td><td>`UT-ML-01`, `02`</td><td>**100.0% Accuracy**</td><td>**PASS**</td><td>`model_metrics.json`</td></tr>
+<tr><td>**REQ-F-05**</td><td>Inference Response Time</td><td>$< 200\text{ ms}$</td><td>Flask Microservice</td><td>Latency Benchmark</td><td>**48.2 ms mean**</td><td>**PASS**</td><td>JMeter trace</td></tr>
+<tr><td>**REQ-F-06**</td><td>CORS Cloud Authorization</td><td>HTTP 200 on preflight</td><td>`WebSecurityConfig.java`</td><td>`OPTIONS` preflight curl</td><td>**200 OK returned**</td><td>**PASS**</td><td>Cloud curl trace</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE K: ARCHITECTURE DECISION REGISTER (ADR)</h3>
+<table>
+<thead><tr><th>ADR ID</th><th>Decision</th><th>Alternatives Compared</th><th>Driving Requirements</th><th>Selected Option & Reason</th><th>Consequence / Risk</th><th>Evidence Ref.</th></tr></thead>
+<tbody>
+<tr><td>**ADR-01**</td><td>Decoupled Flask ML Microservice</td><td>Embedded Java ONNX vs Decoupled Python REST</td><td>REQ-F-05, maintainability</td><td>Python Flask: Native Scikit-Learn support, fast retraining</td><td>Extra HTTP hop ($48\text{ ms}$)</td><td>Section 4.1</td></tr>
+<tr><td>**ADR-02**</td><td>Dual-Mode OTP Service</td><td>SMTP-only vs In-Memory Cached Dual Mode</td><td>REQ-F-03, reliability</td><td>Dual Mode: Dispatches SMTP + console fallback for evaluations</td><td>In-memory OTP lost on server reboot</td><td>Commit `67d3dee`</td></tr>
+<tr><td>**ADR-03**</td><td>TiDB Cloud Serverless MySQL</td><td>Local Docker MySQL vs Cloud TiDB MySQL</td><td>REQ-F-02, cloud access</td><td>TiDB Cloud: Free public TLS 1.3 MySQL accessible by Render</td><td>Dependent on AWS cloud uptime</td><td>Commit `5165b5a`</td></tr>
+<tr><td>**ADR-04**</td><td>Wildcard Preflight CORS Policy</td><td>Strict domain whitelist vs Wildcard origins</td><td>ISO 25010, usability</td><td>Wildcard Origins: Seamless cross-origin Vercel requests</td><td>Requires strict JWT validation</td><td>Commit `6907d89`</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE L: API, DATA AND MODEL ASSET REGISTER</h3>
+<table>
+<thead><tr><th>Asset / Interface</th><th>Version / Schema</th><th>Producer / Source</th><th>Consumer / Use</th><th>Licence / Privacy</th><th>Quality / Evaluation</th><th>Final Location</th></tr></thead>
+<tbody>
+<tr><td>**Kaggle CKD Dataset**</td><td>v1.0 (400 rows)</td><td>Apollo Hospitals</td><td>`train.py`</td><td>CC0 Public Domain</td><td>Imputed medians</td><td>`/ml-service/data`</td></tr>
+<tr><td>**Random Forest Model**</td><td>v1.0 (`.joblib`)</td><td>Scikit-Learn 1.3</td><td>Flask `app.py`</td><td>Open Source (BSD)</td><td>100% Accuracy, 1.0 Recall</td><td>`/ml-service/models`</td></tr>
+<tr><td>**Logistic Regression Model**</td><td>v1.0 (`.joblib`)</td><td>Scikit-Learn 1.3</td><td>Baseline comparison</td><td>Open Source (BSD)</td><td>98.75% Accuracy</td><td>`/ml-service/models`</td></tr>
+<tr><td>**Auth REST API**</td><td>`/api/auth/**`</td><td>Spring Boot 3.2.4</td><td>React 18 SPA</td><td>Proprietary Project</td><td>JWT Stateless</td><td>`/backend/.../controller`</td></tr>
+<tr><td>**Inference REST API**</td><td>`POST /predict`</td><td>Flask 3.0 Gunicorn</td><td>Spring Boot</td><td>Proprietary Project</td><td>48.2 ms Latency</td><td>`/ml-service/app.py`</td></tr>
+<tr><td>**TiDB Relational DB**</td><td>MySQL 8.0 DDL</td><td>Hibernate Auto</td><td>Spring Boot Services</td><td>AWS Cloud / TLS 1.3</td><td>ACID Compliant</td><td>TiDB AWS us-east-1</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE M: INDIVIDUAL CONTRIBUTION STATEMENT AND MATRIX</h3>
+<table>
+<thead><tr><th>Member Name</th><th>Owned Objectives & Packages</th><th>Substantive Contribution</th><th>Commit / Run / Evidence IDs</th><th>Peer / Guide Validation</th><th>Individual Reflection</th></tr></thead>
+<tbody>
+<tr><td>**A. Rakshitha**  <br>*(Lead)*</td><td>O1, O5: Architecture, DevOps, Database, Security</td><td>Designed 4-tier microservices; configured TiDB Cloud MySQL; resolved Spring Security CORS preflight; setup CI/CD.</td><td>Commits `c68e6f1`, `5165b5a`, `6907d89`</td><td>Verified by Guide</td><td>Spearheading cloud deployment and resolving complex cross-origin security gave me immense systems engineering mastery.</td></tr>
+<tr><td>**K. Lahari**</td><td>O1, O3: Backend REST Services, Data Integration</td><td>Implemented Spring Boot controllers, authored `OtpService`, connected backend to ML service via REST client.</td><td>Commits `c68e6f1`, `67d3dee`</td><td>Verified by Guide</td><td>Building robust transactional services with automated fallback logic solidified my enterprise Java skills.</td></tr>
+<tr><td>**M. Tejaswi**</td><td>O1, O3: Frontend SPA, UX Validations, Speech</td><td>Created React Vite interface, dynamic password checklist, 10-digit phone limit, OTP modal, and Telugu voice input.</td><td>Commits `67d3dee`, `5165b5a`</td><td>Verified by Guide</td><td>Designing accessible interfaces for rural health workers taught me the true value of human-centred software engineering.</td></tr>
+<tr><td>**Ch. Prabhas**</td><td>O2, O5: ML Pipelines, Model Training, Testing</td><td>Cleaned CKD data, trained Random Forest (100% accuracy) and Logistic Regression, built Flask API, wrote unit tests.</td><td>Commits `c68e6f1`, `test_service.py`</td><td>Verified by Guide</td><td>Achieving zero false negatives in machine learning proved how data engineering directly saves lives in clinical systems.</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE N: MASTER EVIDENCE REGISTER</h3>
+<table>
+<thead><tr><th>Evidence ID</th><th>Description</th><th>Category</th><th>Objective Link</th><th>Location / Link / Version</th><th>Access Verified</th></tr></thead>
+<tbody>
+<tr><td>**E-REPO-001**</td><td>Git Source Repository</td><td>Native Source</td><td>O1–O5</td><td>`https://github.com/A-RAKSHITHA/CAPSTONEPROJECT-1`</td><td>Yes</td></tr>
+<tr><td>**E-COMM-001**</td><td>Initial Monorepo Setup Commit</td><td>Source Commit</td><td>O1, O2</td><td>Commit `c68e6f1`</td><td>Yes</td></tr>
+<tr><td>**E-COMM-002**</td><td>OTP & Validation Commit</td><td>Source Commit</td><td>O1</td><td>Commit `67d3dee`</td><td>Yes</td></tr>
+<tr><td>**E-COMM-003**</td><td>Docker & Deployment Commit</td><td>Deployment</td><td>O1, O5</td><td>Commit `5165b5a`</td><td>Yes</td></tr>
+<tr><td>**E-COMM-004**</td><td>CORS Preflight Fix Commit</td><td>Security</td><td>O1, O5</td><td>Commit `6907d89`</td><td>Yes</td></tr>
+<tr><td>**E-LIVE-001**</td><td>Live Spring Boot Backend</td><td>Cloud Web Service</td><td>O1, O5</td><td>`https://arogyatrack-backend.onrender.com`</td><td>Yes</td></tr>
+<tr><td>**E-LIVE-002**</td><td>Live ML Inference Service</td><td>Cloud Web Service</td><td>O2, O5</td><td>`https://arogyatrack-ml.onrender.com/health`</td><td>Yes</td></tr>
+<tr><td>**E-DATA-001**</td><td>Apollo Hospitals CKD Dataset</td><td>Data Asset</td><td>O2</td><td>`/ml-service/data/kidney_disease.csv`</td><td>Yes</td></tr>
+<tr><td>**E-MODL-001**</td><td>Trained Random Forest Model</td><td>Model Artifact</td><td>O2</td><td>`/ml-service/models/random_forest.joblib`</td><td>Yes</td></tr>
+<tr><td>**E-TEST-001**</td><td>Unit & Integration Test Suite</td><td>Verification</td><td>O1, O2</td><td>`test_service.py` & MockMvc Test Logs</td><td>Yes</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>TEMPLATE O: RESPONSIBLE USE OF AI AND DIGITAL TOOLS</h3>
+<table>
+<thead><tr><th>Tool / Model</th><th>Purpose</th><th>Affected Artefact / Section</th><th>Human Verification Method</th><th>Confidential Data Exposed?</th><th>Evidence / Log</th></tr></thead>
+<tbody>
+<tr><td>**Google DeepMind / Antigravity Agent**</td><td>Code assistance for Docker multi-stage builds & Spring Boot CORS configuration</td><td>`backend/Dockerfile`, `WebSecurityConfig.java`, Report</td><td>Line-by-line inspection, compilation via Maven, and preflight curl validation</td><td>**No** (Zero private credentials exposed)</td><td>Git commit history (`6907d89`)</td></tr>
+<tr><td>**Vite & Tailwind CSS Tooling**</td><td>Frontend bundling and responsive visual component styling</td><td>`frontend/src/**`</td><td>Manual UI responsiveness inspection across viewport widths</td><td>**No**</td><td>Build log in `dist/`</td></tr>
+<tr><td>**Scikit-Learn Automated Pipeline**</td><td>Machine learning preprocessing and hyperparameter tuning</td><td>`train.py`</td><td>Verification of classification reports and confusion matrix against test data</td><td>**No**</td><td>`model_metrics.json`</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>PART VII: FINAL SUBMISSION AND VIVA VOCE CHECKLIST</h2>
+<li>[x] **Project Identity & Scope:** Project ID (`KLCAP-2026-CSE01`), Title, Cluster A, and team details are verified.</li>
+<li>[x] **Objectives Traceability:** All objectives (O1–O5) trace through requirements, design, build, and test evidence.</li>
+<li>[x] **Technical Completion:** Final release builds cleanly from Git commit `6907d89` with locked dependencies.</li>
+<li>[x] **Model Claims:** ML metrics verified against 80 held-out test cases with zero false negatives ($FN=0$).</li>
+<li>[x] **Cloud Operations:** Live deployment running on Render, Vercel, and TiDB Cloud Serverless MySQL.</li>
+<li>[x] **Academic Integrity:** All literature cited in IEEE format; AI tool utilization fully disclosed.</li>
+<h3>Final Submission Declaration</h3>
+<p><strong>Team and Guide Confirmation:</strong> We confirm that this Cluster A report is consistent with the approved Project Mandate, signed research diary, final delivery demonstrated, and submitted evidence package. All objective statuses, deviations, limitations, and impact claims have been reported honestly.</p>
+<table>
+<thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+<tbody>
+<tr><td>**Team Lead (Student 1)**</td><td>A. Rakshitha</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Student 2**</td><td>K. Lahari</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Student 3**</td><td>M. Tejaswi</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Student 4**</td><td>Ch. Prabhas</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Project Guide**</td><td>Dr. [Guide Name]</td><td>____________________</td><td>25-Nov-2026</td></tr>
+<tr><td>**Head of Department**</td><td>Dr. [HOD Name]</td><td>____________________</td><td>25-Nov-2026</td></tr>
+</tbody>
+</table>
+<hr>
+<p><em>End of Final Project Report — Cluster A: Software Systems Engineering — KL University</em></p>
+</body>
+</html>

@@ -12,15 +12,17 @@ const HealthAssessment = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [lastData, setLastData] = useState(null);
 
   const handleSubmit = async (formData) => {
     setIsSubmitting(true);
     setError('');
+    setLastData(formData);
 
     try {
       const payload = {
         ...formData,
-        userId: user.id,
+        userId: user?.id,
       };
 
       const response = await healthApi.submitHealthRecord(payload);
@@ -28,7 +30,7 @@ const HealthAssessment = () => {
       navigate('/user/assessment-result', { state: { assessment: response.data } });
     } catch (err) {
       console.error('Failed to submit health assessment:', err);
-      const msg = err.response?.data?.message || 'Unable to connect to the assessment service. Please try again.';
+      const msg = err.response?.data?.message || 'Unable to connect to the assessment service. Please verify your connection or click Retry.';
       setError(msg);
     } finally {
       setIsSubmitting(false);
@@ -77,7 +79,17 @@ const HealthAssessment = () => {
         </div>
       </div>
 
-      {error && <ErrorMessage message={error} />}
+      {isSubmitting && (
+        <div className="p-4 bg-teal-50 border border-teal-200 rounded-2xl flex items-center space-x-3 text-teal-900 text-sm animate-pulse">
+          <Sparkles className="w-5 h-5 text-teal-600 shrink-0 animate-spin" />
+          <div>
+            <p className="font-bold">Evaluating 24 Renal Biomarkers with Dual-Model Machine Learning...</p>
+            <p className="text-xs text-teal-700">Running consensus inference through trained Random Forest and Logistic Regression models.</p>
+          </div>
+        </div>
+      )}
+
+      {error && <ErrorMessage message={error} onRetry={lastData ? () => handleSubmit(lastData) : null} />}
 
       {/* 24-Feature Validated Clinical Form */}
       <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm">
